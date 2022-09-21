@@ -3,10 +3,10 @@ node {
 	    git branch: 'main', credentialsId: 'AWS', url: 'https://github.com/kotlaakhil/ks.git'
 	     
     }
-    stage('Maven version') {
-	  sh 'mvn --version'
+   # stage('Maven version') {
+#	  sh 'mvn --version'
       
-    }
+  #  }
 	stage('Java version') {
 	   sh 'java -version'
       
