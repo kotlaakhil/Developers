@@ -20,7 +20,7 @@ node {
 	{
 	sh 'mvn sonar:sonar \
     -Dsonar.host.url=http://192.168.1.12:9000 \
-    -Dsonar.login=b5b5d7a7054928f57ad9d1b24f5df0cff2805baf'	
+    -Dsonar.login=75ec387aac35c86d059dd9c3abcfcd7abd5ae3ec'	
 	}
 	
 	stage('Maven Compile') {
