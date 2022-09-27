@@ -1,0 +1,58 @@
+-name : demo om deployment 
+ hosts : PROD
+ become : yes
+ vars :
+   USERNAME : tom_user
+   TOMCAT_PATH : /tomcat
+   WAR_URL : http://192.168.1.57:8081/repository/maven-snapshots/com/ksapp/ks/2-SNAPSHOT/ks-2-20220923.012913-2.war
+   PACK : /home/bandaru/Documents/apache-tomcat-9.0.65/webapps/ks.war
+   
+ tasks :
+   - name : create an user for tomact
+     ansible.builtin.user :
+       user : "{{USERNAME}}"  
+
+   - name : installing JDK
+     yum :
+        name : java
+        state : latest
+
+   - name : create dir for tomcat
+     ansible.builtin.file :
+       path : "{{TOMCAT_PATH}}" 
+       owner: "{{USERNAME}}" 
+       group : "{{USERNAME}}"
+       state : directory
+       
+   - name : download tomcat
+     ansible.builtin.unarchive:
+      src : https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.82/bin/apache-tomcat-8.5.82.tar.gz
+      dest : "{{TOMCAT_PATH}}"
+      remote_src : yes
+     become_user : "{{USERNAME}}"
+
+    - name : remove old artifacts
+      file :
+        state : "{{item}}"     
+        path : "/home/bandaru/Documents/apache-tomcat-9.0.65/webapps"
+        owner : "{{USERNAME}}"
+      with_items:
+        - absent
+        - directory
+
+    - name : deploying war package
+      ansible.builtin.get_url:
+        url: "{{WAR_URL}}"
+        dest : "{{PACK}}"
+
+    - name : check tomcat is running or not         
+      shell : ps -ef | tomcat | grep -v grep 
+      register : out
+      ignore_error : true
+      
+    - name : starting tomcat
+      shell : "nohup sh /home/bandaru/Documents/apache-tomcat-9.0.65/bin/startup.sh"   
+            
+      
+
+   
