@@ -1,0 +1,2480 @@
+
+v12
+
+https://10.9.3.233:4425    - brk1
+
+4425      brk1
+4424      brk2
+4426      brk3
+4427      brk4
+4428      brk5
+4429      brk11
+4430      brk12
+4431      brk13
+4432      brk14
+
+
+
+------------
+------------------------------------
+
+
+to check file size .
+du -gs *
+
+du -gs * | sort -n 
+
+==================================================================================================
+SELECT * FROM ESBUTIL.APPLICATION_LOG_IIBABRKT01 WHERE REQUEST_UUID='12345' order by CREATED_ON desc ;
+SELECT * FROM ESBUTIL.PAYLOAD_LOG_IIBABRKT01 WHERE REQUEST_UUID='FinDev1' order by CREATED_ON desc ;
+SELECT * FROM ESBUTIL.APPLICATION_LOG_IIBABRKT01 WHERE INTERFACE_NAME='FinacleFetchEmailIDAPI'  order by CREATED_ON desc ;
+
+SELECT * FROM ESBUTIL.APPLICATION_LOG_IIBABRKT01 WHERE INTERFACE_NAME='FinacleFetchEmailIDAPI' and SERVICEID='AE.EWORK.FIN.SDBSP.001' order by CREATED_ON desc ;
+SELECT * FROM ESBUTIL.APPLICATION_LOG_IIBABRKT01 WHERE REQUEST_UUID='12345' and CHANNEL='EWORK' order by CREATED_ON desc ;
+
+SELECT * FROM ESBUTIL.PAYLOAD_LOG_IIBABRKT01 WHERE UUID='7e0b5443-04b5-45d6-94c2-48f54c96015f' order by CREATED_ON desc ;
+
+
+SELECT * FROM ESBUTIL.APPLICATION_LOG_IIBABRKT01 order by CREATED_ON desc ;
+select * from ESBUTIL.PAYLOAD_LOG_IIBABRKT01 order by CREATED_ON desc ;
+
+For FIXML and transaction logs
+select * from ESBUTIL.INWARD_TRN where SRC_KEY1='GLN161166472' ;
+
+select * from ESBUTIL.INWARD_TRN where SRC_KEY1='FinDev1' order by CREATED_ON desc ;
+select * from ESBUTIL.INWARD_TRN where SRC_KEY1 like '%366174%' ;
+select * from ESBUTIL.TRANSACTION_PAYLOAD where INW_TRN_ID='549140479';
+
+select * from INWARD_FILTER_MASTER where INWARD_IP IN ('10.24.220.167','10.24.221.155','10.24.222.6','10.24.220.187','10.24.221.50','10.22.248.122','10.20.24.218','10.20.25.17','10.20.26.29','10.20.26.42','10.20.24.105','10.20.24.67');
+
+select * from ESBUTIL.INWARD_FILTER_MASTER where INWARD_IP='10.0.148.64' and SERVICEID='AE.TBB.PSDX.SSTP.001' ;
+
+select * from ESBUTIL.INWARD_FILTER_MASTER where INWARD_IP='10.9.0.100' and SERVICEID='AE.ESB.DCMS.SSTP.001';
+
+select * from ESBUTIL.INWARD_FILTER_MASTER where INWARD_IP='10.22.233.0' and INWARD_IP_END='10.22.233.24' ;
+
+-----------------------------------------------------------------------------------
+
+select * from ESBUTIL.INWARD_TRN where SRC_KEY1='UTIBH'order by CREATED_ON desc  ;
+select * from ESBUTIL.TRANSACTION_PAYLOAD where INW_TRN_ID='548903185'order by CREATED_ON desc ;
+
+select * from ESBUTIL.INWARD_TRN where SRC_KEY1 like '%EX333590%'order by CREATED_ON desc ; 
+select * from ESBUTIL.TRANSACTION_PAYLOAD where INW_TRN_ID='548903185' order by CREATED_ON desc ;
+
+select * from ESBUTIL.INWARD_TRN where SENDER_ID ='ARD'  order by CREATED_ON desc ;
+
+
+
+select * from ESBUTIL.INWARD_TRN where SRC_KEY1  IN ('230201-0035067-00001',
+'230201-0035067-00002',
+'230203-0035070-00001',
+'230203-0035070-00002')order by CREATED_ON desc ;
+
+select * from esbutil.lookup;
+
+echo "  " | base64 -d
+
+------------------------------------------------------------------------------------------------------
+
+https://10.20.206.82/_plugin/kibana   
+
+
+
+https://10.20.206.82:443
+
+
+
+
+https://esbelkuat.axisb.com:5601
+user :esbsupport 
+password:  EsbSupport@UAT2022
+
+https://confluence.axisb.com/display/ESB/Payload+Crypto
+
+device unlock:
+https://adselfservice.axisb.com:9251/showLogin.cc
+
+
+https://dccmdb.axisb.com/   
+https://dccmdb.axisb.com/
+
+
+
+
+Excel Path: /iib/NSEAPI/IN/*.xlsx
+
+
+
+https://esbuat2.axisb.com/json/logging 
+
+
+{"request":[{"Saksham":"all"}]}
+
+
+
+ ps -ef | grep -i filebeat
+
+
+
+
+mqsistop IIBUBRK01 
+mqsistop IIBUBRK02 
+mqsistop IIBUBRK03 
+mqsistop IIBUBRK04 
+mqsistop IIBUBRK05 
+mqsistop IIBUBRK11 
+mqsistop IIBUBRK12 
+mqsistop IIBUBRK13 
+mqsistop IIBUBRK14 
+
+
+ps -ef | grep IBUBRK
+
+
+mqsistart IIBUBRK01
+mqsistart IIBUBRK02
+mqsistart IIBUBRK03
+mqsistart IIBUBRK04
+mqsistart IIBUBRK05
+mqsistart IIBUBRK11
+mqsistart IIBUBRK12
+mqsistart IIBUBRK13
+mqsistart IIBUBRK14
+
+
+mqsistart IIBUBRK01
+mqsistart IIBUBRK02
+mqsistart IIBUBRK03
+mqsistart IIBUBRK05
+mqsistart IIBUBRK11
+mqsistart IIBUBRK12
+mqsistart IIBUBRK13
+
+
+
+
+telnet uat.embsrvcs.axisb.com 443
+
+
+mqsistart IIBUBRK01 ; sleep 30
+mqsistart IIBUBRK02 ; sleep 30
+mqsistart IIBUBRK03 ; sleep 30
+mqsistart IIBUBRK04 ; sleep 100
+mqsistart IIBUBRK05 ; sleep 30
+mqsistart IIBUBRK11 ; sleep 100
+mqsistart IIBUBRK12 ; sleep 100
+mqsistart IIBUBRK13 ; sleep 100
+mqsistart IIBUBRK14 ; sleep 100
+
+
+
+
+TO CHECK EG COUNT
+================================================
+ps -ef | grep -i BRK01.IS | grep -v grep | wc -l  
+ps -ef | grep -i BRK02.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK03.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK04.IS | grep -v grep | wc -l  
+ps -ef | grep -i BRK05.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK11.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK12.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK13.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK14.IS | grep -v grep | wc -l
+
+
+
+
+BRK01-13
+BRK02-16
+BRK03-13
+BRK04-16
+BRK05-13
+BRK11-22
+BRK12-21
+BRK13-21
+BRK14-17
+
+
+
+cd /web/Nginx/bin
+
+
+sudo ./StartNginx_8443.sh
+sudo ./StartNginx_443.sh
+
+=====================================================================================
+Undeployallapplications
+
+
+dt=`date +%d%m%Y_%H%M%S`
+
+HOME=/iib/esbadm
+export HOME
+
+. /ACE/ACE12/ACE12.0.3.0/ace-12.0.3.0/server/bin/mqsiprofile
+
+brokername=IIBUBRK05
+#LogPath=/iib/Ummar/Undeployallapplications/Logs/Undeployallapplications.log
+LogStatu=/iib/Ummar/Undeployallapplications/Logs/Undeployallapplicationstatus.out
+
+mqsideploy $brokername -e BRK05.IS.01 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.02 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.03 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.04 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.05 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.06 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.07 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.08 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.09 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.10 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.11 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+mqsideploy $brokername -e BRK05.IS.12 -a /iib/Ummar/V2.0_UAT_AES128Encryption_V10.bar -m >$LogStatu ; sleep 10
+
+
+====================================================================================================================
+stop the AUDIT EG :
+------------------
+mqsistopmsgflow IIBUBRK01 -e BRK01.IS.AUDIT
+mqsistopmsgflow IIBUBRK02 -e BRK02.IS.AUDIT
+mqsistopmsgflow IIBUBRK03 -e BRK03.IS.AUDIT
+mqsistopmsgflow IIBUBRK04 -e BRK04.IS.AUDIT
+mqsistopmsgflow IIBUBRK05 -e BRK05.IS.AUDIT
+mqsistopmsgflow IIBUBRK11 -e BRK11.IS.AUDIT
+mqsistopmsgflow IIBUBRK12 -e BRK12.IS.AUDIT
+mqsistopmsgflow IIBUBRK13 -e BRK13.IS.AUDIT
+mqsistopmsgflow IIBUBRK14 -e BRK14.IS.AUDIT
+
+
+mqsistop 
+
+Clear the queues:
+----------------
+log.msg.in
+log.fatial.in
+eai.paylog.log.in
+
+Start the AUDIT EG:
+-------------------
+mqsistartmsgflow IIBUBRK01 -e BRK01.IS.AUDIT
+mqsistartmsgflow IIBUBRK02 -e BRK02.IS.AUDIT
+mqsistartmsgflow IIBUBRK03 -e BRK03.IS.AUDIT
+mqsistartmsgflow IIBUBRK04 -e BRK04.IS.AUDIT
+mqsistartmsgflow IIBUBRK05 -e BRK05.IS.AUDIT
+mqsistartmsgflow IIBUBRK11 -e BRK11.IS.AUDIT
+mqsistartmsgflow IIBUBRK12 -e BRK12.IS.AUDIT
+mqsistartmsgflow IIBUBRK13 -e BRK13.IS.AUDIT
+mqsistartmsgflow IIBUBRK14 -e BRK14.IS.AUDIT 
+
+
+log.msg.in
+log.fatial.in
+eai.paylog.log.in
+============================================
+AIX:
+
+du -gs * | sort -n 
+
+Linux:
+
+du -hs * | sort -n
+
+=========================================================================
+Unload a queue to a file        : dmpmqmsg -iQ1 -fmyfile
+Load a queue from a file        : dmpmqmsg -oQ1 -fmyfile
+Copy a queue from Q1 to Q2      : dmpmqmsg -iQ1 -oQ2
+Move a queue from Q1 to Q2      : dmpmqmsg -IQ1 -oQ2
+Move old messages from Q1 to Q2 : dmpmqmsg -IQ1 -oQ2 -T1440
+Provide Summary of messages     : dmpmqmsg -iQ1 -ds
+
+
+======================================================
+
+queue manager logs path 
+/ESB/WMQ/IIBQMAGWT01/data/IIBQMAGWT01/errors
+
+
+
+================================================================================================
+Broker backeup and restore :
+
+mqsirestorebroker IIBUBRK04 -d /ESB/BROKERBACKUP -a IIBUBRK04_26022023.zip
+mqsibackupbroker IIBUBRK04 -d /ESB/BROKERBACKUP 
+
+
+=============================================================================================
+
+
+if unable to stop qmqnger:
+--------------------------
+
+ 
+
+endmqm qmanger
+ps -ef | grep -i IIBQMAGWT01 | grep -v grep | tr -s " " | cut -d" "  -f3 | tr -s "\n" " "
+
+kill -9 proccess id's
+
+strmqm IIBQMAGWT01
+
+
+=============================================================================================
+
+ps -ef | grep -i nginx | grep -v grep | tr -s " " | cut -d" "  -f2 | tr -s "\n" " " '
+
+ps -ef | grep IIBUBRK | grep -v grep | tr -s " " | cut -d" "  -f3  | tr -s "\n" " " '
+
+grep -A 2  FinacleGoldLoanRepaymentUpdateAPI  *.conf | grep -v  backup |  grep -i max_fails 
+
+grep -A 2  FinacleGoldLoanRepaymentUpdateAPI  *.conf | grep -v  backup |  grep -i server
+
+
+#this command display  Container information
+mqsicacheadmin IIBUBRK05 -c showPlacement
+
+# This will help to find out Map Name's
+
+mqsicacheadmin IIBUBRKxx -c showMapSizes
+
+# Display cache information like - container name , port range , etc.
+
+
+mqsireportproperties IIBUBRK05 -e BRK05.IS.02 -o ComIbmCacheManager -r 
+
+mqsicreateexecutiongroup IIBPBRK14 -e BRK14.IS.01
+mqsichangeproperties IIBPBRK14 -e BRK14.IS.01 -o HTTPConnector -n explicitlySetPortNumber -v 8401
+mqsichangeproperties IIBPBRK14 -e BRK14.IS.01 -o HTTPSConnector -n explicitlySetPortNumber -v 9401
+mqsichangeproperties IIBPBRK14 -e BRK14.IS.01 -o ExecutionGroup -n httpNodesUseEmbeddedListener -v true
+mqsichangeproperties IIBPBRK14 -e BRK14.IS.01 -o ExecutionGroup -n soapNodesUseEmbeddedListener -v true
+mqsichangeproperties IIBPBRK14 -e BRK14.IS.01 -o ComIbmJVMManager -n jvmMaxHeapSize -v 536870912
+mqsichangeproperties IIBPBRK14 -e BRK14.IS.01 -o HTTPSConnector -n maxThreads -v 2000
+mqsichangeproperties IIBPBRK14 -e BRK14.IS.01 -o HTTPConnector -n maxThreads -v 2000
+
+
+mqsireportproperties IIBUBRK03 -e BRK03.IS.AUDIT  -o HTTPSConnector -r | grep -i port
+
+to enable and disable:
+===============
+
+stop broker and eable command
+
+mqsichangebroker 'IIBUBRK05' -b default ---------> for enabe
+
+mqsichangebroker 'IIBUBRK05' -b disabled -------------> for disable
+
+
+to check
+======
+mqsireportproperties 'IIBUBRK01' -b cachemanager -o CacheManager -r
+
+
+ mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n jvmSystemProperty -v "-Dcom.ibm.crypto.provider.DoRSATypeChecking=false"
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.01 -o ComIbmJVMManager -n jvmSystemProperty -v "-Dcom.ibm.crypto.provider.DoRSATypeChecking=false" 
+  mqsireportproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -r
+
+
+
+https://10.9.4.150:7112/Decrypt 
+
+
+Command: mqsicreateconfigurableservice IIBUBRK13 -c SecurityProfiles -o WSSecurityProfile -n "AlternateServers,authentication,authenticationConfig,authorization,authorizationConfig,idToPropagateToTransport,keyStore,mapping,mappingConfig,passwordValue,propagation,rejectBlankpassword,transportPropagationConfig,trustStore" -v "","NONE","","NONE","","STATIC ID","Reserved for future use","NONE","","PLAIN","TRUE","FALSE","WSSecurityID","Reserved for future use"
+ 
+
+mqsicreateconfigurableservice IIBUBRK05 -c SecurityProfiles -o PRIMEMaskedSecurityProfile -n "AlternateServers,authentication,authenticationConfig,authorization,authorizationConfig,idToPropagateToTransport,keyStore,mapping,mappingConfig,passwordValue,propagation,rejectBlankpassword,transportPropagationConfig,trustStore" -v "","NONE","","NONE","","STATIC ID","Reserved for future use","NONE","","PLAIN","TRUE","FALSE","PRIMEMaskedSecurityProfile","Reserved for future use"
+
+ PRIMEMaskedSecurityProfile
+    alternateServers=''
+    authentication='NONE'
+    authenticationConfig=''
+    authorization='NONE'
+    authorizationConfig=''
+    idToPropagateToTransport='STATIC ID'
+    keyStore='Reserved for future use'
+    mapping='NONE'
+    mappingConfig=''
+    passwordValue='PLAIN'
+    propagation='TRUE'
+    rejectBlankpassword='FALSE'
+    transportPropagationConfig='PRIMEMaskedSecurityProfile'
+    trustStore='Reserved for future use'
+
+
+
+
+
+
+TCPIPClient
+  SyncIV
+    AlternativeAddresses=''
+    CloseWithUnprocessedData='FALSE'
+    ExpireConnectionSec='5'
+    Hostname='10.9.2.209'
+    MaxReceiveRecordBytes='100000000'
+    MaximumConnections='50'
+    MinimumConnections='1'
+    Port='14571'
+    SO_KEEPALIVE='FALSE'
+    SO_LINGER='FALSE'
+    SO_LINGER_TIMEOUT_SEC='-1'
+    SO_RCVBUF='0'
+    SO_SNDBUF='0'
+    SSLCiphers=''
+    SSLProtocol=''
+    TCP_NODELAY='TRUE'
+    TrafficClass='-1'
+    UseUniqueConnectionPool='FALSE'
+
+
+TCPIPClient
+  SyncIII
+    AlternativeAddresses=''
+    CloseWithUnprocessedData='FALSE'
+    ExpireConnectionSec='5'
+    Hostname='10.9.2.209'
+    MaxReceiveRecordBytes='100000000'
+    MaximumConnections='50'
+    MinimumConnections='1'
+    Port='14569'
+    SO_KEEPALIVE='FALSE'
+    SO_LINGER='FALSE'
+    SO_LINGER_TIMEOUT_SEC='-1'
+    SO_RCVBUF='0'
+    SO_SNDBUF='0'
+    SSLCiphers=''
+    SSLProtocol=''
+    TCP_NODELAY='TRUE'
+    TrafficClass='-1'
+    UseUniqueConnectionPool='FALSE'
+
+
+
+
+
+
+TO CHECK CONFIGURABLE SERVICES:
+
+=======================
+
+mqsireportproperties  IIBUBRK01 -c AllTypes -o AllReportableEntityNames -r 
+
+mqsireportproperties  IIBUBRK01 -c TCPIPClient -o SyncI -r
+mqsireportproperties  IIBUBRK01 -c TCPIPClient -o SyncII -r
+mqsireportproperties  IIBUBRK01 -c TCPIPClient -o SyncIII -r
+mqsireportproperties  IIBUBRK01 -c TCPIPClient -o SyncIV -r
+
+-------------------------------------------------------------
+mqsireportproperties  IIBUBRK02 -c TCPIPClient -o SyncII -r
+
+mqsireportproperties  IIBUBRK01 -c TCPIPClient -o SyncI -r    | grep -i port
+mqsireportproperties  IIBUBRK01 -c TCPIPClient -o SyncII -r   | grep -i port
+mqsireportproperties  IIBUBRK01 -c TCPIPClient -o SyncIII -r  | grep -i port
+mqsireportproperties  IIBUBRK01 -c TCPIPClient -o SyncIV -r   | grep -i port
+
+mqsisetdbparms IIBUBRK04 -n PRIMEMaskedSecurityProfile -u AXISB/PRIME4UATMASK -p Prime@2021
+
+mqsisetdbparms IIBUBRK13 -n HRMSSecurityProfile -u DEV_INVOKER -p AxisIndia@2023
+
+
+
+IIBUBRK05
+
+mqsireportproperties  IIBUBRK05 -c AllTypes -o AllReportableEntityNames -r
+
+mqsireportproperties  IIBUBRK05 -c TCPIPClient -o SyncI -r
+mqsireportproperties  IIBUBRK05 -c TCPIPClient -o SyncII -r
+mqsireportproperties  IIBUBRK05 -c TCPIPClient -o SyncIII -r
+mqsireportproperties  IIBUBRK05 -c TCPIPClient -o SyncIV -r
+
+
+mqsireportproperties  IIBUBRK01 -c AllTypes -o AllReportableEntityNames -r
+
+mqsireportproperties  IIBUBRK05 -c TCPIPClient -o SyncI -r    | grep -i port
+mqsireportproperties  IIBUBRK05 -c TCPIPClient -o SyncII -r   | grep -i port
+mqsireportproperties  IIBUBRK05 -c TCPIPClient -o SyncIII -r  | grep -i port
+mqsireportproperties  IIBUBRK05 -c TCPIPClient -o SyncIV -r   | grep -i port
+
+7110
+
+mqsideploy IIBUBRK01 -e BRK01.IS.10 -a AIX_UAT_C24_Sync_Inq_Interfaces_v1.3_Insta30_1_v10.bar
+
+mqsideleteconfigurableservice IIBUBRK05  -c JDBCProviders -o SMARTFORMDB1 
+
+mqsichangeproperties IIBUBRK13 -c TCPIPClient -o SyncII -n Port -v "39136"
+mqsichangeproperties IIBUBRK13 -c TCPIPClient -o SyncII -n Hostname -v "10.9.212.247"
+
+
+
+mqsichangeproperties IIBUBRK01 -c TCPIPClient -o SyncII -n Port -v "14570"
+mqsichangeproperties IIBUBRK01 -c TCPIPClient -o SyncII -n Hostname -v "10.9.2.209"
+
+TO CREATE CONFIGURABLE SERVICES:
+
+========================
+
+
+
+Inbox
+Hi  ESBUAT Team,
+
+You can monitor IDC dashboard for UAT Environment ... CPU/Memory/Disk.
+
+If there is any disk or OS(CPU/Memory related issues for which we don't receive Nagios alert, immediately send an email to infra monitoring team.
+
+Nagios:esbuser Axisb@123
+IDC :- https://idccentreon.axisb.com - FOR UAT hosts...
+
+EXAMPLE:
+
+mqsicreateconfigurableservice IIBUBRK05 -c TCPIPClient -o SyncI -n "AlternativeAddresses,CloseWithUnprocessedData,ExpireConnectionSec,Hostname,MaxReceiveRecordBytes,MaximumConnections,MinimumConnections,Port,SO_KEEPALIVE,SO_LINGER,SO_LINGER_TIMEOUT_SEC,SO_RCVBUF,SO_SNDBUF,SSLCiphers,SSLProtocol,TCP_NODELAY,TrafficClass,UseUniqueConnectionPool" -v "","false","5","10.9.2.209","100000000","50","1","14568","false","false","-1","0","0","","","false","-1","false"
+
+  
+  
+  mqsicreateconfigurableservice IIBUBRK05 -c TCPIPClient -o SyncII -n "AlternativeAddresses,CloseWithUnprocessedData,ExpireConnectionSec,Hostname,MaxReceiveRecordBytes,MaximumConnections,MinimumConnections,Port,SO_KEEPALIVE,SO_LINGER,SO_LINGER_TIMEOUT_SEC,SO_RCVBUF,SO_SNDBUF,SSLCiphers,SSLProtocol,TCP_NODELAY,TrafficClass,UseUniqueConnectionPool" -v "","false","5","10.9.2.209","100000000","50","1","14570","false","false","-1","0","0","","","false","-1","false"
+  
+  
+  
+ mqsicreateconfigurableservice IIBUBRK05 -c TCPIPClient -o SyncIII -n "AlternativeAddresses,CloseWithUnprocessedData,ExpireConnectionSec,Hostname,MaxReceiveRecordBytes,MaximumConnections,MinimumConnections,Port,SO_KEEPALIVE,SO_LINGER,SO_LINGER_TIMEOUT_SEC,SO_RCVBUF,SO_SNDBUF,SSLCiphers,SSLProtocol,TCP_NODELAY,TrafficClass,UseUniqueConnectionPool" -v "","false","5","10.9.2.209","100000000","50","1","14569","false","false","-1","0","0","","","true","-1","false" 
+  
+
+
+mqsicreateconfigurableservice IIBUBRK05 -c TCPIPClient -o SyncIV -n "AlternativeAddresses,CloseWithUnprocessedData,ExpireConnectionSec,Hostname,MaxReceiveRecordBytes,MaximumConnections,MinimumConnections,Port,SO_KEEPALIVE,SO_LINGER,SO_LINGER_TIMEOUT_SEC,SO_RCVBUF,SO_SNDBUF,SSLCiphers,SSLProtocol,TCP_NODELAY,TrafficClass,UseUniqueConnectionPool" -v "","false","5","10.9.2.209","100000000","50","1","14571","false","false","-1","0","0","","","false","-1","false"
+
+
+
+  mqsideleteconfigurableservice IIBUBRK02 -c TCPIPClient -o SyncIII 
+
+  AlternativeAddresses=''
+    CloseWithUnprocessedData='FALSE'
+    ExpireConnectionSec='5'
+    Hostname='10.9.2.209'
+    MaxReceiveRecordBytes='100000000'
+    MaximumConnections='50'
+    MinimumConnections='1'
+    Port='14570'
+    SO_KEEPALIVE='FALSE'
+    SO_LINGER='FALSE'
+    SO_LINGER_TIMEOUT_SEC='-1'
+    SO_RCVBUF='0'
+    SO_SNDBUF='0'
+    SSLCiphers=''
+    SSLProtocol=''
+    TCP_NODELAY='TRUE'
+    TrafficClass='-1'
+    UseUniqueConnectionPool='FALSE'
+
+TO CHANGE CONFIGURABLE SERVICES:
+
+========================
+
+EXAMPLE:
+
+mqsichangeproperties  IIBUBRK05 -c TCPIPClient -o SyncII -n "AlternativeAddresses,CloseWithUnprocessedData,ExpireConnectionSec,Hostname,MaxReceiveRecordBytes,MaximumConnections,MinimumConnections,Port,SO_KEEPALIVE,SO_LINGER,SO_LINGER_TIMEOUT_SEC,SO_RCVBUF,SO_SNDBUF,SSLCiphers,SSLProtocol,TCP_NODELAY,TrafficClass,UseUniqueConnectionPool" -v "","false","5","10.9.2.209","100000000","50","1","14570","false","false","-1","0","0","","","false","-1","false"
+
+
+
+mqsireportproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -r
+
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n truststoreType -v 'JKS'
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n truststoreFile -v '/iib/Cert/HUNTER/Hunter_New.jks'
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n truststorePass -v 'HUNTER_TRUSTSTORE_Keystore::password'
+                                                                        
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n keystoreType -v 'JKS'
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n keystoreFile -v '/iib/Cert/HUNTER/Hunter_New.jks'
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n keystorePass -v 'HUNTER_HTTPS_Keystore::password'
+
+
+mqsisetdbparms IIBUBRK05 -n HUNTER_TRUSTSTORE_Keystore::password -u ignore -p passwordofcert
+mqsisetdbparms IIBUBRK05 -n HUNTER_HTTPS_Keystore::password -u ignore -p passwordofcert
+
+
+
+ Broker  keytool:
+ 
+ mqsireportproperties ACEUBRKAUDIT-o BrokerRegistry -r
+ 
+mqsichangeproperties ACEUBRKAUDIT -o BrokerRegistry -n brokerTruststoreFile -v '/home/esbadm/Cert/esbmqclient.jks'
+mqsichangeproperties ACEUBRKAUDIT -o BrokerRegistry -n brokerTruststorePass -v 'brokerTruststore::password'
+mqsisetdbparms ACEUBRKAUDIT  -n brokerTruststore::password -u ignore -p Axis#1234
+
+
+
+==========================================================================================================
+trace: 
+
+V10:
+
+mqsichangetrace IIBABRKT01 -u -e FinIFSC_Interface -k IFTESBService_v2 -f C24_Services.C24_Services_MF -l debug -r -c 100000
+
+mqsichangetrace IIBABRKT01 -u -e FinIFSC_Interface -k IFTESBService_v2 -f C24_Services.C24_Services_MF -l none
+
+mqsireadlog IIBABRKT01 -u -e FinIFSC_Interface -f -o /iib/IFTESBService_v2_ESB.xml
+
+mqsiformatlog -i /iib/IFTESBService_v2_ESB.xml -o /iib/IFTESBService_v2_ESB.txt
+
+v12: 
+mqsichangetrace IIBUBRK12 -u -e BRK12.IS.18 -l debug -r -c 100000
+mqsichangetrace IIBUBRK12 -u -e BRK12.IS.18 -l none --trace /home/esbadm/BRK12.IS.03.txt
+
+mqsichangetrace IIBUBRK13 -u -e BRK13.IS.11 -l debug -r -c 100000
+mqsichangetrace IIBUBRK13 -u -e BRK13.IS.11 -l none --trace /home/esbadm/BRK12.IS.03.txt
+
+IIBUBRK12   BRK12.IS.01 
+mqsichangetrace IIBUBRK12 -u -e BRK12.IS.06 -l debug -r -c 100000
+mqsichangetrace IIBUBRK12 -u -e BRK12.IS.06 -l none
+
+
+BRK01.IS.06
+IIBUBRK01
+mqsichangetrace IIBUBRK01 -u -e BRK01.IS.06 -l debug -r -c 100000
+mqsichangetrace IIBUBRK01 -u -e BRK01.IS.06 -l none
+
+IIBUBRK02 -e BRK02.IS.AUDIT
+
+
+service trace:
+mqsichangetrace IIBUBRK12 -t -e BRK12.IS.03 -l debug -r -c 100000
+mqsichangetrace IIBUBRK12 -t -e BRK12.IS.03 -l none --trace /home/esbadm/BRK12.IS.03.txt
+
+v12:
+
+traces off command:
+
+mqsichangetrace IIBUBRK12 -n off -e BRK12.IS.03
+
+
+
+MQ end policy  bar files
+
+
+/ESB/MQEndpoint/ACEAUDITPOLICY_BRK01.bar
+/ESB/MQEndpoint/ACEAUDITPOLICY_BRK02.bar
+/ESB/MQEndpoint/ACEAUDITPOLICY_BRK03.bar
+/ESB/MQEndpoint/ACEAUDITPOLICY_BRK04.bar
+/ESB/MQEndpoint/ACEAUDITPOLICY_BRK05.bar
+/ESB/MQEndpoint/ACEAUDITPOLICY_BRK11.bar
+/ESB/MQEndpoint/ACEAUDITPOLICY_BRK12.bar
+/ESB/MQEndpoint/ACEAUDITPOLICY_BRK13.bar
+/ESB/MQEndpoint/ACEAUDITPOLICY_BRK14.bar
+
+=================================================================================================================
+
+
+keytool:
+
+mqsireportproperties IIBUBRK02 -o BrokerRegistry -r | grep brokerTruststoreFile
+
+ 
+ 
+#For UAT V10, use below command to get the JKS file location. Execution group level JKS was used in v10.
+mqsireportproperties <NodeName> -e <EGName> -o ComIbmJVMManager -r | grep truststoreFile
+mqsireportproperties IIBABRKT01 -e Blaze2_Interface -o ComIbmJVMManager -r | grep truststoreFile
+mqsireportproperties IIBABRKT02 -e BRK02.IS.10 -o ComIbmJVMManager -r | grep truststoreFile
+
+
+/ESB/BROKERTRUSTSTORE/UATBROKERTRUST.jks    SKSM_LDAP
+
+keytool -import -trustcacerts -alias Sakshamcer -file /iib/Cert/SakshamUATRootCertificate.cer  -keystore /ESB/BROKERTRUSTSTORE/UATBROKERTRUST.jks -storetype jks -storepass Axis#1234
+keytool -import -trustcacerts -alias Upswing -file /iib/Cert/UPSWING-client-certificate.cer  -keystore /ESB/BROKERTRUSTSTORE/UATBROKERTRUST.jks -storetype jks -storepass Axis#1234
+keytool -import -trustcacerts -alias eworkflow -file /iib/Cert/eworkflow.cer  -keystore /ESB/BROKERTRUSTSTORE/UATBROKERTRUST.jks -storetype jks -storepass Axis#1234
+
+
+keytool -import -trustcacerts -alias MCXNEWCertificate -file /BAR/Cert/certificate.cer -keystore /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks -storetype jks -storepass ######
+
+
+keytool -import -trustcacerts -alias OBPPartnersCallBackApproot -file /iib/Cert/SakshamUATRootCertificate.cer  -keystore /ESB/BROKERTRUSTSTORE/UATBROKERTRUST.jks -storetype jks -storepass Axis#1234
+
+
+keytool -list  -alias  -keystore /iib/Cert/JKS/Blaze_Interface.jks -storetype jks  -storepass Axis#1234
+
+keytool -list -v  -keystore /iib/Cert/JKS/CreditCard.jks -storetype jks  -storepass Axis#1234
+keytool -list -v  -keystore /iib/Cert/HUNTER/Hunter_New.jks -storetype jks  -storepass Axis#1234
+
+keytool -list -v -keystore /ESB/BROKERTRUSTSTORE/UATBROKERTRUST.jks -storetype jks  -storepass Axis#1234 | grep -i alias | grep -i EPH
+
+keytool -list -v  -alias upimandate -keystore /ESB/BROKERTRUSTSTORE/UATBROKERTRUST.jks -storetype jks  -storepass Axis#1234 | grep until
+
+keytool -export -alias upimandate -keystore /ESB/BROKERTRUSTSTORE/UATBROKERTRUST.jks -rfc -file /tmp/upimandate.cer
+
+
+keytool -delete -trustcacerts -alias nseindiacert -keystore /ESB/BROKERTRUSTSTORE/UATBROKERTRUST.jks -storetype jks -storepass Axis#1234
+
+
+/iib/Cert/JKS/Blaze_Interface.jks
+apiconnect1
+apiconnect
+
+mqsiapplybaroverride -b v1.3_AIX_UATTesting_EPHPaymentInqESBService_urlchange_26042022.bar -k EPHPaymentInqESBService -m http://10.9.0.204:9087/PyEn/CTET1001=http://10.0.62.128:9390/PyEn/CTET1001
+
+mqsiapplybaroverride -b AIX_UAT_NRD_H2H_FT_Services_V2.9_V10_URLChange_HTTPNO.bar -k NRD_H2H_Services -m  http://10.9.4.150:8080/C24_SyncService=https://esbuat2.axisb.com/C24_SyncService
+
+ mqsichangetrace IIBABRKT01 -n off -e <EG_NAME> 
+
+ tail -100f /iib/syslog.out | grep -i "EAI.MSGLOG.MGT.IN"
+ 
+ echo |openssl s_client -servername domainname -connect ihsuat.axisb.com:443 2>/dev/null | openssl x509 -noout -text
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+echo | openssl s_client -connect axiomnuvouat.axisb.com:443 2>/dev/null | openssl x509 -noout -dates
+echo |openssl s_client -servername domainname -connect ihsuat.axisb.com:443 2>/dev/null | openssl x509 -noout -text
+openssl pkcs12 -in /iib/PFXdlmsuat.pfx -nokeys -clcerts -out /iib/PFXdlmsuat.cer
+openssl s_client -connect esbuat.axisb.com:443 2>/dev/null to check version TLS
+
+
+openssl x509 -x509toreq -in AxisMile.cer -keyout AxisMile.key
+tail 
+openssl x509 -x509toreq -in NSCCL201020.cer -keyout NSCCL201020.key
+
+openssl x509 -x509toreq -in Axis.jks -keyout PRODNONDMZ.key
+
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout saksham.key -out saksham.crt
+
+----------------------------------------------------------------------------------
+openssl genrsa -des3 -out Hunter.key 2048 -in Hunter.cer
+openssl x509 -inform DER -outform PEM -in UAT_NONDMZDOMAIN.cer -out UAT_NONDMZDOMAIN.pem
+----------------------------------------------------------------------------------
+
+openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout AxisMile.key -out AxisMile.crt
+
+openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout saksham.axisb.com.key -out saksham.axisb.com.crt
+
+openssl x509 -inform PEM -in router-public.pem -outform DER -out router-public.cer
+
+
+openssl genrsa -des3 -out esbuat.axisb.com.key 2048 -in esbuat.axisb.com.cer
+
+openssl x509 -inform DER -outform PEM -in PROD_NONDMZ_Domain.cer -out PROD_NONDMZ_Domain.pem
+
+
+--------------------------
+openssl x509 -inform DER -outform PEM -in ProdNonDmzNew.cer -out ProdNonDmzNew.pem
+openssl genrsa -des3 -out ProdNonDmzNew.key 2048 -in ProdNonDmzNew.cer
+
+Private key
+openssl pkcs12 -in sakshamuat.p12 -nocerts -out privateKey.pem
+Certificates:
+openssl pkcs12 -in sakshamuat.p12 -clcerts -nokeys -out publicCert.pem
+
+--------------------------
+gskcmd -cert -add -type cms -db ../cert/key.kdb -pw password -label "carootcert" -trust enable -file ../cert/carootcert.der
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+dmpmqmsg -i FINONE.SR.NSR.ERROR -f /tmp/FINONE.SR.NSR.ERROR -m QMUATBRK
+
+dmpmqcfg -m IIBMABRKT01 -o 1line | grep -i "('LC"  > /tmp/IIBMABRKT01.mqsc_1line.txt_AUG
+
+IIBQMAGWT01
+dmpmqcfg -m IIBQMAGWT01 -o 1line > /tmp/IIBQMAGWT01.mqsc_123line.txt
+
+
+refersh cluster(*)
+
+alter q(aueue name) cluster(cluster name)
+dis clusqmgr(*)
+dis clusqmgr(qmgr name)
+dis qcluster(queue name)
+
+dis qs(NP.INCOMING) type(handle) all
+dis qmgr all
+alter ql(ESCROW.OUTGOING) MONQ(medium)
+alter ql(ESCROW.OUTGOING) MONQ(OFF)
+==================================================
+ALTER QREMOTE(EZBZ.NE.OUT) RQMNAME(AXIS_GPS) RNAME(BCTCIEXTIEB_NEFT) 
+ALTER QREMOTE(EZBZ.RT.OUT) RQMNAME(AXIS_GPS) RNAME(BCTCIEXTIEB_RTGS)
+
+ 
+
+ALTER CHANNEL(ESBEB.TO.EPHEB) CHLTYPE(SDR) CONNAME('10.9.204.227(1421)')
+========================================================================
+reset CHANNEL(ESBARD.TO.EPHARD) seqnum(1)
+
+to set sequence number for GPS
+======================================================
+
+TO CHECK THE PERMISSION OF QUEUES:
+----------------------------------
+dspmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm
+
+
+dmpmqcfg -m QMG -o 1line > /tmp/QMGR.mqsc_1line.txt
+dmpmqmsg -i FINONE.SR.NSR.ERROR -f /tmp/FINONE.SR.NSR.ERROR -m QMUATBRK 
+dmpmqcfg -m IIBMABRKT01 -o 1line | grep -i "('LC"  > /tmp/IIBMABRKT01.mqsc_1line.txt_AUG 
+
+TO SET  THE PERMISSIONS OF QUEUES:
+---------------------------------
+setmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm +allmqi (for all)
+setmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm +get (for single give name )
+
+
+
+TO REMOVE PERMISSIONS OF QUEUES:
+--------------------------------
+setmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm -allmqi
+
+
+
+=======================================================================================
+
+
+
+TO CHECK PERMISSION FOR QMANAGER:
+---------------------------------
+dspmqaut -m QMUATBRK -t qmgr -p esbadm
+
+TO SET PERMISSIONS FOR QMANAGER:
+--------------------------------
+setmqaut -m QMUATBRK -t qmgr -p esbadm +connect
+
+TO REMOVE PERMISSIONS FOR QMANAGER:
+-----------------------------------
+setmqaut -m QMUATBRK -t qmgr -p esbadm -connect
+
+
+
+=========================================================================================
+ALTER  CHANNEL('ESBEB.TO.EPHEB') CHLTYPE(SDR) CONNAME('10.9.204.227(1421)')  
+
+
+HOW TO DEFINE DEADQ:
+---------------------
+         2.WAYS TO CREATE DEADQ
+
+
+
+1.While creating qmgr-------------  crtmqm -u deadqname qmanagername    
+runmqsc qmanagername--------------  define ql(queuename)
+
+
+
+
+2.create qmgr fisrt then we can assign deadqueue
+crtmqm qmgr
+define ql(qm1.deadq1)
+alter qmgr deadq(qm1.deadq1)
+
+
+
+
+dis qs(NP.INCOMING) type(handle) all
+
+dis qs(GOOGLE.MSG.IN) type(handle) all
+
+===================================
+
+remove SSL ciphers 
+stop channel 
+reset 
+enter sequence no 1
+
+resolve   ---> commit
+
+start
+
+=======================================
+
+mqsilist -a -r  | grep application name
+
+[30-Jun 10:54 PM] Mahesh Oni
+find /ESB -name stderr | grep -i BRK14.IS.01
+
+[30-Jun 10:54 PM] Mahesh Oni
+Try below trace for V12mqsichangetrace TESTNODE_iibadm -e default -t -l debug
+mqsireadlog TESTNODE_iibadm -t -e default -f -o C:\Users\iibadm\errors\service.xml
+mqsiformatlog -i C:\Users\iibadm\errors\service.xml -o C:\Users\iibadm\errors\servicetrace.log
+mqsichangetrace TESTNODE_iibadm -e default -t -l none
+
+
+
+dmpmqcfg -m QMG -o 1line > /tmp/QMGR.mqsc_1line.txt
+dmpmqmsg -i FINONE.SR.NSR.ERROR -f /tmp/FINONE.SR.NSR.ERROR -m QMUATBRK
+
+dmpmqcfg -m IIBQMAGWT01 -o 1line | grep -i "ALTER"  > /tmp/IIBQMAGWT01.mqsc_12line.txt_mar
+dmpmqcfg -m IIBQMAGWT01 -o 1line > /tmp/IIBQMAGWT01.mqsc_123line.txt_mar
+
+
+
+
+ALTER QREMOTE(ARC.NE.OUT) RQMNAME(AXIS_GPS) RNAME(BCTCIEXTIEB_NEFT) 
+ALTER QREMOTE(ARC.RT.OUT) RQMNAME(AXIS_GPS) RNAME(BCTCIEXTIEB_RTGS)
+
+ 
+
+ALTER CHANNEL(ESBARC.TO.EPHARC) CHLTYPE(SDR) CONNAME('10.9.204.227(1421)')
+ALTER CHANNEL(ESBARC.TO.EPHARC) CHLTYPE(SDR) SSLCIPH(TLS_RSA_WITH_AES_128_CBC_SHA256)
+ALTER CHANNEL(EPHARC.TO.ESBARC) CHLTYPE(RCVR) SSLCIPH(TLS_RSA_WITH_AES_128_CBC_SHA256)
+REFRESH SECURITY TYPE(SSL)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+mqsichangetrace IB9NODE -n off -e default -f myFlow
+
+
+mqsicacheSatish IIBABRKD01 -c showPlacement
+mqsicacheSatish IIBABRKT01 -c showMapSizes
+
+=============================================================
+use this command for apply override command for properties changes 
+
+mqsiapplybaroverride -b V1.5_AIX_UAT_EAIAuditLogging_IIBV10_jkspathChange_Insta5.bar -k EAIAuditLogging -m "EAI_Flow.EAI_MESSAGELOGGING_SERVICE#additionalInstances=49" -o V1.5_AIX_UAT_EAIAuditLogging_IIBV10_jkspathChange_Insta50.bar
+
+
+====================================================================
+files nodes
+
+input path :
+/iib/SFTP/APP/inbound1/MAPS
+
+output path:
+/iib/SFTP/APP/outbound1/MAPS
+
+mqsiarchib
+/iib/SFTP/APP/inbound1/MAPS/mqsiarchive
+
+to check in sql querys
+select * from esbutil.inward_trn where sender_id='NRD' and trunc(created_on)=trunc(sysdate) order by updated_on desc;
+
+select * from ESBUTIL.FILE_RECORD where trunc(created_on) = trunc(sysdate) and SENDER_ID='MAPS';
+SELECT * FROM ESBUTIL.FILE_TRN WHERE FILEID ='ISGOTTUM030220230013';
+
+to check send or not 
+
+/iib/BATCHHUBBACKUP/today date 
+then check file name .
+
+=============================================================
+------------------------------------------------------------------------------------------------------------------------
+mqsireportproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -r
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n keystoreType -v JKS
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n keystoreFile -v /iib/Ummar/Satish_Interface.jks
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n keystorePass -v SAKSHAM_Keystore::password
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n truststoreType -v JKS
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n truststoreFile -v /iib/Cert/JKS/EasyPay.jks
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n truststorePass -v SAKSHAM_Truststore::password
+mqsisetdbparms BABRKT01 -n SAKSHAM_Keystore::password -u ignore -p Axis#1234
+mqsisetdbparms BABRKT01 -n SAKSHAM_Truststore::password -u ignore -p Axis#1234
+--------------------------------------------------------------------------------------------------------------------------
+mqsireportproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -r
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n keystoreType -v JKS
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n keystoreFile -v /iib/WORKPATH/EGJKS/EGJKS_DEV.jks
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n keystorePass -v Satish_Interface_Keystore::password
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n truststoreType -v JKS
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n truststoreFile -v /iib/WORKPATH/EGJKS/EGJKS_DEV.jk
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n truststorePass -v Satish_Interface_Truststore::password
+mqsisetdbparms IIBABRKD01 -n Satish_Interface_Keystore::password -u ignore -p Axis#1234
+mqsisetdbparms IIBABRKD01 -n Satish_Interface_Truststore::password -u ignore -p Axis#1234
+mqsichangeproperties IIBABRKD01 -e Satish_Interface -o HTTPSConnector -n sslProtocol -v TLSv1.2
+
+-------------------------------------------------------------------------------------------------------------------------
+
+JDBC Connection for my sql
+mqsireportproperties IIBABRKD01 -c JDBCProviders -o SAKUAT -r
+
+mqsicreateconfigurableservice IIBABRKD01 -c JDBCProviders -o SAKUAT -n "databaseName,databaseSchemaNames,databaseType,databaseVersion,description,environmentParms,jarsURL,jdbcProviderXASupport,maxConnectionPoolSize,portNumber,securityIdentity,serverName,type4DatasourceClassName,type4DriverClassName" -v "jocata_evoke","jocata_evoke","MySQL","default_Database_Version","default_Description","default_none","/var/mqsi/shared-classes/","false","0","2142","SAKUAT","10.9.2.84","com.mysql.jdbc.jdbc2.optional.MysqlDataSource","com.mysql.jdbc.Driver"
+
+mqsichangeproperties IIBABRKD01 -c JDBCProviders -o SAKUAT -n connectionUrlFormat -v jdbc:mysql://[serverName]:[portNumber]/[databaseName]?generateSimpleParameterMetadata=true
+
+mqsisetdbparms IIBABRKD01 -n jdbc::SAKUAT -u sakshamuser -p Com#14ac2
+
+JDBC Connection for my sql
+mqsireportproperties IIBABRKT01 -c JDBCProviders -o APIUAT -r
+
+mqsicreateconfigurableservice IIBABRKT01 -c JDBCProviders -o APIUAT -n "databaseName,databaseSchemaNames,databaseType,databaseVersion,description,environmentParms,jarsURL,jdbcProviderXASupport,maxConnectionPoolSize,portNumber,securityIdentity,serverName,type4DatasourceClassName,type4DriverClassName" -v "order_checkout","jocata_evoke","MySQL","default_Database_Version","default_Description","default_none","/var/mqsi/shared-classes/","false","0","3433","APIUAT","10.9.28.142","com.mysql.jdbc.jdbc2.optional.MysqlDataSource","com.mysql.jdbc.Driver"
+
+mqsichangeproperties IIBABRKT01 -c JDBCProviders -o APIUAT -n connectionUrlFormat -v jdbc:mysql://[serverName]:[portNumber]/[databaseName]?generateSimpleParameterMetadata=true
+
+mqsisetdbparms IIBABRKT01 -n jdbc::APIUAT -u apiadm -p apiadm
+
+JDBC Connection for my sql
+mqsireportproperties IIBABRKP04 -c JDBCProviders -o axis -r
+
+mqsicreateconfigurableservice IIBABRKP04 -c JDBCProviders -o axis -n "databaseName,databaseSchemaNames,databaseType,databaseVersion,description,environmentParms,jarsURL,jdbcProviderXASupport,maxConnectionPoolSize,portNumber,securityIdentity,serverName,type4DatasourceClassName,type4DriverClassName" -v "axis","axis","MySQL","default_Database_Version","default_Description","default_none","/var/mqsi/shared-classes/","false","0","3306","axis","10.9.11.118","com.mysql.jdbc.jdbc2.optional.MysqlDataSource","com.mysql.jdbc.Driver"
+
+mqsichangeproperties IIBABRKP04 -c JDBCProviders -o axis -n connectionUrlFormat -v jdbc:mysql://[serverName]:[portNumber]/[databaseName]?generateSimpleParameterMetadata=true
+
+mqsisetdbparms IIBABRKP04 -n jdbc::axis -u esbunidesk -p Aug@2017
+mqsichangeproperties IIBABRKP01 -c JDBCProviders -o axis -n databaseSchemaNames -v axis
+--------------------------------------------------------------------------------------------------------------------------------------
+
+mqsichangeproperties IIBABRKT01 -c JDBCProviders -o APIUAT -n maxConnectionPoolSize -v 10
+
+JDBCProviders
+  DLPUATSME
+    connectionUrlFormat='jdbc:mysql://[serverName]:[portNumber]/[databaseName]?generateSimpleParameterMetadata=true'
+    connectionUrlFormatAttr1=''
+    connectionUrlFormatAttr2=''
+    connectionUrlFormatAttr3=''
+    connectionUrlFormatAttr4=''
+    connectionUrlFormatAttr5=''
+    databaseName='jocata_sme_uat'
+    databaseSchemaNames='jocata_sme_uat'
+    databaseType='MySQL'
+    databaseVersion='default_Database_Version'
+    description='default_Description'
+    environmentParms='default_none'
+    jarsURL='/var/mqsi/shared-classes/'
+    jdbcProviderXASupport='FALSE'
+    maxConnectionPoolSize='0'
+    portNumber='3307'
+    securityIdentity='DLPUAT'
+    serverName='10.0.63.17'
+    type4DatasourceClassName='com.mysql.jdbc.jdbc2.optional.MysqlDataSource'
+    type4DriverClassName='com.mysql.jdbc.Driver'
+    useDeployedJars='TRUE'
+
+
+------------------------------------------------------------------------------------------------------------
+
+mqsicreateexecutiongroup BABRKP01 -e KIOSK_Interface
+
+mqsicreateexecutiongroup BABRKP02 -e CRM_Interface
+mqsichangeproperties BABRKT01 -o ExecutionGroup -e Admin_ummar -n httpNodesUseEmbeddedListener -v true
+
+mqsichangeproperties BABRKP02 -o ExecutionGroup -e Hunter -n httpNodesUseEmbeddedListener -v true
+mqsichangeproperties BABRKP01 -o ExecutionGroup -e FINONEESB_Interface -n httpNodesUseEmbeddedListener -v true
+mqsichangeproperties BABRKP02 -o ExecutionGroup -e FINONEESB_Interface -n httpNodesUseEmbeddedListener -v true
+FINONEESB_Interface
+mqsichangeproperties BABRKT01 -e Admin_ummar -o  HTTPConnector -n explicitlySetPortNumber -v 7535
+
+mqsichangeproperties BABRKP01 -e B2B_Interface -o  HTTPConnector -n explicitlySetPortNumber -v 9030
+mqsichangeproperties BABRKT01 -e IB_Interface -o  HTTPConnector -n explicitlySetPortNumber -v 7839
+mqsichangeproperties BABRKT01 -e CORPORATE_Interface -o  HTTPConnector -n explicitlySetPortNumber -v 7845
+
+mqsichangeproperties BABRKT01 -o ExecutionGroup -e MANOJ_TEST -n httpNodesUseEmbeddedListener -v true
+
+mqsideploy BABRKP01 -e CrmNext_Interface -a V1.0_AIX_LIVE_CRMNextService_16082014.bar -v V1.0_AIX_LIVE_CRMNextService_16082014.bar.log
+
+mqsireportproperties BABRKP01 -e OTP_Interface -o HTTPConnector -r
+
+mqsireportproperties BABRKP01 -e CrmNext_Interface -o HTTPConnector -r
+
+mqsireportpolicy BABRKP01 -e MobileBank_Interface -k CRMnextLeadESBService -m gen.CRMnextLeadESBService -r
+C24_Sync_Inq_Interfaces
+mqsireportpolicy BABRKP01 -e C24_Sync -k C24_Sync_Inq_Interfaces -m Sync.Sync_C24_Inq_interface_HTTP -r
+mqsicreatepolicy BABRKT01 -t WorkloadManagement -l wlm_policy -f my_policy.xml
+mqsicreatepolicy BABRKP01 -t WorkloadManagement -l Instance10policy -f Instance10policy.xml
+mqsireportpolicy BABRKP02 -t WorkloadManagement -a
+
+mqsiattachpolicy BABRKP01 -e Card_Interface -k PrimeCardsList -m gen.PrimeCardsList_REST_JSON -t WorkloadManagement -l Policy10Instances
+mqsiattachpolicy BABRKP01 -e EPH_Interface -k EPH_Async_Interfaces -m Send_to_EPH_SOAP -t WorkloadManagement -l C24_ASync9Instances
+
+mqsireportpolicy BABRKP01 -e SKSMLOAN_Interface -k AxisCustomerESBService -m JSON.AxisESBService_JSON -r -t WorkloadManagement -l Insta20
+mqsiattachpolicy BABRKP02 -e SKSMLOAN_Interface -k AxisCustomerESBService -m JSON.AxisESBService_JSON -t WorkloadManagement -l Insta20
+
+mqsireportpolicy BABRKP01 -e C24_ASync -k C24_ASync_Interfaces -m ASync.Send_to_C24 -r
+mqsireportpolicy BABRKP01 -e EPH_Interface -k EPH_Async_Interfaces -m Send_to_EPH_SOAP -r
+
+mqsireportpolicy BABRKP01 -t WorkloadManagement -a
+mqsicreatepolicy BABRKT01 -t WorkloadManagement -l Maps9msgpersec -f my_policy.xml
+mqsireportpolicy BABRKT01 -e C24_ASync -k C24_ASync_Interfaces -m ASync.File_Send_to_C24 -r
+mqsiattachpolicy BABRKT01 -e C24_ASync -k C24_ASync_Interfaces -m ASync.File_Send_to_C24 -t WorkloadManagement -l Maps9msgpersec
+
+cd /var/mqsi/registry/BABRKT01/CurrentVersion/ExternalResources/JDBCProviders/UserDefined/
+cd /var/mqsi/components/BABRKT01/
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+mqsirestorebroker BABRKP01 -d /iib/esbadm/Backups -a BABRKP01_08082014_142648.zip -v BrokerRestore.txt
+
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+
+Client SSL:
+1. runmqckm -keydb -create -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/VM_Client/VM.jks" -pw clientpass -type jks
+2. Create the certificate:
+runmqckm -cert -create -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/VM_Client/VM.jks" -pw clientpass -label ibmwebspheremqVM -dn "CN=VM,OU=Support,O=AXIS,ST=MH,C=" -expire 3650
+
+
+3. Extract the public SSL client certificate
+A new file is created in the current directory: VM.crt
+runmqckm -cert -extract -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/VM_Client/VM.jks" -pw clientpass -label ibmwebspheremqVM -target VM.crt -format ascii
+
+
+
+
+
+Server: Create SSL server key database
+1.UNIX:
+Create SSL server key database
+runmqckm -keydb -create -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/IIBMQ.kdb" -pw serverpass -type cms -expire 365 -stash
+
+2.
+UNIX:
+Create certificate:
+runmqckm -cert -create -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/IIBMQ.kdb" -pw serverpass -label ibmwebspheremqIIBMQ -dn "CN=IIBMQ,OU=Support,O=AXIS,ST=MH,C=" -expire 3650
+List the certificate:
+runmqckm -cert -list -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/IIBMQ.kdb" -pw serverpass
+3.
+Add the certificate VM.kdb:
+runmqckm -cert -add -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/IIBMQ.kdb" -pw serverpass -label ibmwebspheremqVM -file "/var/mqm/qmgrs/IIBMABRKT01/ssl/VM_Client/VM.crt" -format ascii
+List the certificates:
+runmqckm -cert -list -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/IIBMQ.kdb" -pw serverpass
+
+4.
+UNIX:
+Extract the public SSL server certificate and copy it to the SSL client side
+cd /var/mqm/qmgrs/IIBMABRKT01/ssl/
+runmqckm -cert -extract -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/IIBMQ.kdb" -pw serverpass -label ibmwebspheremqIIBMQ -target IIBMQ.crt -format ascii
+
+5.
+Client: Add the SSL client certificate to the Client's key database.
+WINDOWS:
+Copy the public SSL server certificate to the SSL client side 
+
+Add the SSL client certificate to the Queue Manager's key database.
+runmqckm -cert -add -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/VM_Client/VM.jks" -pw clientpass -label ibmwebspheremqIIBMQ -file "/var/mqm/qmgrs/IIBMABRKT01/ssl/IIBMQ.crt" -format ascii
+List the certificate:
+runmqckm -cert -list -db "/var/mqm/qmgrs/IIBMABRKT01/ssl/VM_Client/VM.jks" -pw clientpass
+
+
+
+ALTER QMGR SSLKEYR('/var/mqm/qmgrs/IIBMABRKT01/ssl/IIBMQ')  CERTLABL(ibmwebspheremqIIBMQ)
+ALTER QMGR SSLFIPS(NO)
+REFRESH SECURITY TYPE(SSL)
+
+
+ SSLCIPH(TLS_RSA_WITH_AES_256_CBC_SHA256)
+
+
+
+DEFINE CHANNEL('SSL.SVRCONN') CHLTYPE(SVRCONN) TRPTYPE(TCP) SSLCIPH(NULL_SHA) SSLCAUTH(REQUIRED) REPLACE
+     3 : DEFINE CHANNEL('SSL.SVRCONN') CHLTYPE(SVRCONN) TRPTYPE(TCP) SSLCIPH(NULL_SHA) SSLCAUTH(REQUIRED) REPLACE
+AMQ8242E: SSLCIPH definition wrong.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+Instructions for IBM App Connect Enterprise File files:
+     WARNING: If you manually installed any previous fixes that were supplied by IBM Support,
+              ensure that they do not conflict with this new fix.
+     
+     This fix may be installed automatically using the provided mqsifixinst.sh script. 
+     
+      The mqsifixinst.sh script automates the install and uninstall process of IBM App Connect 
+      Enterprise fixes. For the install process, it backs up the files that are to be replaced to a 
+      fixed location under the product installation directory before copying over the new files.
+      The uninstall process will re-instate the files that were saved during the fix install    
+      process. The script will also check for conflicts with other test fixes that have been    
+      applied previously using the mqsifixinst.sh script, but it cannot detect conflicts with   
+      fixes that have been applied manually.                                                    
+      
+      The syntax for the mqsifixinst.sh script is:
+      
+      ./mqsifixinst.sh {install directory} {action}
+      
+       Where action is one of the following values:
+         'testinstall'   - Log to the console the actions that are performed
+                           while installing the fix, but make no actual changes.
+         'install'       - Install the interim fix or test fix. Run as root!
+         'testuninstall' - Log to the console the actions that are performed
+                           while uninstalling the fix, but make no actual changes.
+         'uninstall'     - Uninstall the interim fix or test fix. Run as root!
+     
+     
+      To install a fix by using the mqsifixinst.sh script, complete the following steps.
+     
+       1. Create a temporary directory to hold the fix.
+     
+       2. Unpack the fix package into the temporary directory.
+          If the fix package is already unpacked, then copy its contents into the temporary directory.
+     
+       3. Change directory to the temporary directory.
+     
+       4. Test that the fix installs successfully by using the "testinstall" action.
+          For example, ./mqsifixinst.sh /opt/IBM/ace/12.0.1.0 testinstall 12.0.1.0-ACE-linuxX64-TFIC12345
+     
+       5. Correct any reasons for failure and repeat the test installation.
+     
+       6. When the test installation is successful, install the fix by using the "install" action.
+          For example, ./mqsifixinst.sh /opt/IBM/iib/12.0.1.0 install 12.0.1.0-ACE-LinuxX64-TFIC12345
+     
+       7. Remove the temporary directory that is no longer required.
+     
+      Fixes that are installed by using the script can be uninstalled by completing the following steps.
+     
+       1. Change directory to the installation directory.
+     
+       2. Test that the fix uninstalls successfully by using the "testuninstall" action.
+          For example, ./mqsifixinst.sh /opt/IBM/iib/12.0.1.0 testuninstall 12.0.1.0-ACE-LinuxX64-TFIC12345
+     
+       3. Correct any reasons for failure and repeat the test uninstallation.
+     
+       4. When the test uninstallation is successful, uninstall the fix by using the "uninstall" action:
+         For example, ./mqsifixinst.sh /opt/IBM/iib/12.0.1.0 uninstall 12.0.1.0-ACE-LinuxX64-TFIC12345
+     
+      NOTE: If the mqsifixinst.sh script does not install the fix successfully,
+            the reason for failure is explained by console messages.
+            If the reason for failure is not clear, contact IBM Support.
+            If you contact IBM Support, you must provide a description of the
+            failing scenario, the console output, and the mqsifixinst.log file
+            from the target installation directory.
+     
+       ======
+	   
+	   
+	   Execute Command to untar : zcat 12.0.3.0-ACE-AIXPPC64-TFIT39515A.tar.Z | tar -xvf -
+
+
+
+stop/start Brokers
+
+mqsistart 'IIBUBRK01' &
+mqsistart 'IIBUBRK02' &
+mqsistart 'IIBUBRK03' &
+mqsistart 'IIBUBRK04' &
+mqsistart 'IIBUBRK05' &
+mqsistart 'IIBUBRK11' &
+mqsistart 'IIBUBRK12' &
+mqsistart 'IIBUBRK13' &
+mqsistart 'IIBUBRK14' &
+BIP8071I: Successful command completion.
+
+
+Steps to be executed for Log4j:
+
+1)Copy 12.0.3.0-ACE-AIXPPC64-TFIT39515A.tar.Z from 10.9.4.150:/ACE/FP_ACE12/ to Target Host path /ACE/FP_ACE12/
+2)Execute Command to untar : zcat 12.0.3.0-ACE-AIXPPC64-TFIT39515A.tar.Z | tar -xvf -
+3)./mqsifixinst.sh /ACE/ACE12/ACE12.0.3.0/ace-12.0.3.0 testinstall 12.0.3.0-ACE-AIXPPC64-TFIT39515A
+4)./mqsifixinst.sh /ACE/ACE12/ACE12.0.3.0/ace-12.0.3.0 install 12.0.3.0-ACE-AIXPPC64-TFIT39515A
+5)stop/start Brokers
+
+mqsistart 'IIBUBRK01' &
+mqsistart 'IIBUBRK02' &
+mqsistart 'IIBUBRK03' &
+mqsistart 'IIBUBRK04' &
+mqsistart 'IIBUBRK05' &
+mqsistart 'IIBUBRK11' &
+mqsistart 'IIBUBRK12' &
+mqsistart 'IIBUBRK13' &
+mqsistart 'IIBUBRK14' &
+
+6) Remove backup folder
+
+Steps For Logging Log4j:
+1)Copy only below files, remove rest of the log4j files: path - /var/mqsi/shared-classes
+esbadm@MINESBUATAPPS3 P9#  ls -alrt log4j*
+-rw-r--r--    1 esbadm   esbadm       317566 Oct 12 19:15 log4j-api-2.19.0.jar
+-rw-r--r--    1 esbadm   esbadm      1864386 Oct 12 19:15 log4j-core-2.19.0.jar
+2) Take backup of Logging_framework, and replace with new file
+esbadm@MINESBUATAPPS1 P9#  ls -lart Logging_framework*
+-rw-r--r--    1 esbadm   esbadm         2497 Sep 30 19:31 Logging_framework.jar_bkp_03102022
+-rw-r--r--    1 esbadm   esbadm        13849 Oct 03 12:30 Logging_framework.jar
+
+------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+  
+
+has context menu
+----------------------------------------------------------------------------------------------------------------------
+scrpit for /iib/getEG :
+
+
+
+#!/usr/bin/sh
+PORT=$1
+
+if [ -z "$PORT" ]; then
+ echo "Please provide Port number"
+ exit
+fi
+
+
+PROCESSUNQID=$(netstat -Aan | grep -w "*.$PORT" | grep -i list | awk {'print $1'} | sed 's/[[:space:]]//g')
+
+if [ ! -z "$PROCESSUNQID" ]; then
+ PROCESSID=$(rmsock $PROCESSUNQID tcpcb | awk {'print $9'})
+ ps -ef | grep $PROCESSID
+ else
+  echo "No Eg found"
+fi
+
+
+
+
+
+
+[esbadm@VMINESBUTWB2 bin]$ cat getEG2.sh
+#!/bin/sh
+#Get the EG details
+INPUT=$1;
+cat /web/Nginx/logs/access.log | awk -F '|' ' $6 == "'$INPUT'" {print $3" "$10}'|  tr -s ':' ' ' | tr -s '-' ' ' | grep -v "," | awk '{print $3" "$2}' | grep "BRK" >> /tmp/tmp-BrkEgRead
+
+OUT_LEN=`cat /tmp/tmp-BrkEgRead | wc -l`
+
+if [ $OUT_LEN -eq 0 ] ; then
+                FILES_1=`find /web/Nginx/logs -type f -mtime -30 -name "access.log.*[0-9]"`
+                for file in $FILES_1;
+                        do
+                        cat $file | awk -F '|' ' $6 == "'$INPUT'" {print $3" "$10}'|  tr -s ':' ' ' | tr -s '-' ' ' | grep -v "," | awk '{print $3" "$2}' | grep "BRK" >> /tmp/tmp-BrkEgRead
+                        RECORDS=`cat /tmp/tmp-BrkEgRead | wc -l`
+                        if [ $RECORDS -gt 100 ] ; then
+                break;
+                        fi
+                        done
+                OUT2_LEN=`cat /tmp/tmp-BrkEgRead | wc -l`
+
+                if [ $OUT2_LEN -eq 0 ] ; then
+                echo "Performing deep search"
+                                FILES_2=`find /web/Nginx/logs -type f -mtime -30 -name "access.log.2022.*.gz"`
+                                for file in $FILES_2;
+                                do
+                                        zcat $file | awk -F '|' ' $6 == "'$INPUT'" {print $3" "$10}'|  tr -s ':' ' ' | tr -s '-' ' ' | grep -v "," | awk '{print $3" "$2}' | grep "BRK" >> /tmp/tmp-BrkEgRead
+                                        if [ $RECORDS -gt 100 ] ; then
+                        break;
+                                        fi
+                                done
+                                OUT3_LEN=`cat /tmp/tmp-BrkEgRead | wc -l`
+                                if [ $OUT3_LEN -eq 0 ] ; then
+                                                echo "No result found for URL"
+                                else
+                                        awk '{print substr($1, length($1)-4) " "  substr($2, length($2)-1)}' /tmp/tmp-BrkEgRead | sort | uniq | grep BRK
+                                fi
+        else
+                awk '{print substr($1, length($1)-4) " "  substr($2, length($2)-1)}' /tmp/tmp-BrkEgRead | sort | uniq | grep BRK
+        fi
+else
+        awk '{print substr($1, length($1)-4) " "  substr($2, length($2)-1)}' /tmp/tmp-BrkEgRead | sort | uniq | grep BRK
+fi
+> /tmp/tmp-BrkEgRead
+exit 0
+[esbadm@VMINESBUTWB2 bin]$ cat getBrkEg
+#!/bin/sh
+# script to get eg from nginx conf
+INPUT=$1
+GET_POS=`cat -n /web/Nginx/conf/customconf/https_locations/*.conf | grep location | grep "$INPUT" |  awk ' $3 == "'$INPUT'" {print $1}' | head -1`
+#echo "output : $GET_POS "
+if [ -z "$GET_POS" ] ; then
+        echo "No Match Found. Please enter valid URL"
+else
+POS_PLUS=`expr $GET_POS + 1 `
+LOCAT_STR=`cat -n /web/Nginx/conf/customconf/https_locations/*.conf | grep $POS_PLUS | grep proxy_pass |sed -e 's|://| |g' | sed -e 's|https/|https /|g' | tr -d ';' | awk '{print $(NF-1) }'| head -1`
+#echo "output : $LOCAT_STR "
+PTR_LINE1=`cat -n /web/Nginx/conf/customconf/https_upstream/*.conf | grep "$LOCAT_STR" | awk '{print $1}' | head -1`
+PTR_LINE2=`expr $PTR_LINE1 + 10`
+#echo " $PTR_LINE1 , $PTR_LINE2 "
+echo " cat -n /web/Nginx/conf/customconf/https_upstream/*.conf | sed -n -e ' $PTR_LINE1 , $PTR_LINE2 p ' > /tmp/aceBrkEgTmpf " > /home/esbadm/aceBrkEgcmd
+chmod +x /home/esbadm/aceBrkEgcmd
+/home/esbadm/aceBrkEgcmd
+#cat /tmp/aceBrkEgTmpf
+> /tmp/aceBrkEgFltr
+while read line;
+do
+flag=`echo $line | egrep "server|upstream" | wc -l`
+if [ $flag -eq 1 ] ; then
+echo $line >> /tmp/aceBrkEgFltr
+else
+break;
+fi
+done < /tmp/aceBrkEgTmpf
+cat /tmp/aceBrkEgFltr | grep server | grep -v bkp | awk '{print $3}' | tr -s ':' ' ' | awk '{print substr($1, length($1)-4) " "  substr($2, length($2)-1)}'
+rm /tmp/aceBrkEgTmpf /home/esbadm/aceBrkEgcmd /tmp/aceBrkEgFltr
+fi
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+
+SYSTEM.DEAD.LETTER.QUEUE
+
+alter qmgr deadq(SYSTEM.DEAD.LETTER.QUEUE)
+
+TO CHECK THE PERMISSION OF QUEUES:
+----------------------------------
+dspmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm
+
+TO SET  THE PERMISSIONS OF QUEUES:
+---------------------------------
+setmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm +allmqi (for all)
+setmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm +get (for single give name )
+
+
+
+TO REMOVE PERMISSIONS OF QUEUES:
+--------------------------------
+setmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm -allmqi
+
+
+
+=======================================================================================
+
+
+
+TO CHECK PERMISSION FOR QMANAGER:
+---------------------------------
+dspmqaut -m QMUATBRK -t qmgr -p esbadm
+
+TO SET PERMISSIONS FOR QMANAGER:
+--------------------------------
+setmqaut -m QMUATBRK -t qmgr -p esbadm +connect
+
+TO REMOVE PERMISSIONS FOR QMANAGER:
+-----------------------------------
+setmqaut -m QMUATBRK -t qmgr -p esbadm -connect
+
+
+
+=========================================================================================
+
+
+
+HOW TO DEFINE DEADQ:
+---------------------
+         2.WAYS TO CREATE DEADQ
+
+
+
+1.While creating qmgr-------------  crtmqm -u deadqname qmanagername    
+runmqsc qmanagername--------------  define ql(queuename)
+
+
+
+
+2.create qmgr fisrt then we can assign deadqueue
+crtmqm qmgr
+define ql(qm1.deadq1)
+alter qmgr deadq(qm1.deadq1)
+
+
+
+
+LINUX-TO CHECK FILE SIZE:
+-------------------------
+du -sh /web/Nginx/bin/getEG2.sh
+du -h /web/Nginx/bin/getEG2.sh
+
+================================
+
+AIX-TO CHECK FILE SIZE:
+------------------------
+du -a -m /var/mqsi/core.8323556.14160010 (megabytes/MB)
+du -a -g /var/mqsi/core.8323556.14160010 (gigabytes/GB)
+du -a -k /var/mqsi/core.8323556.14160010 (Kilobytes/KB)
+  
+  ========================================================
+  
+TO CHECK DISK USAGE ON LINUX/AIX:
+---------------------------------
+df -g (AIX)
+df -h (LINUX)
+lsblk (LINUX)
+
+
+
+Steps to add Client Certificate at EG Level (Hunter):
+
+mqsireportproperties  IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -r
+
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n truststoreType -v 'JKS'
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n truststoreFile -v '/iib/Cert/HUNTER/Hunter_New.jks'
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n truststorePass -v 'HUNTER_TRUSTSTORE_Keystore::password'
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n keystoreType -v 'JKS'
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n keystoreFile -v '/iib/Cert/HUNTER/Hunter_New.jks'
+mqsichangeproperties IIBUBRK05 -e BRK05.IS.11 -o ComIbmJVMManager -n keystorePass -v 'HUNTER_HTTPS_Keystore::password'
+mqsisetdbparms IIBUBRK05 -n HUNTER_TRUSTSTORE_Keystore::password -u ignore -p ****
+mqsisetdbparms IIBUBRK05 -n HUNTER_HTTPS_Keystore::password -u ignore -p ****
+
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+ mqsistopmsgflow IIBUBRK01 -e BRK01.IS.06 -k ARC_Services
+ 
+EPH Sender Channel	RemoteQueue	Channel name
+EPH.TO.RTGSESB	ESBEC.INCOMING	RTGS (Adhoc RTGS via ESB) R41 and R42
+EPHARC.TO.ESBARC	ARC.RTNE.IN	Axis Remit Connect
+EPHARD.TO.ESBARD	ARD.RTNE.IN	ARD Channel
+EPHCMM.TO.ESBCMM	CMM.RTNE.IN	Gem caution dev
+EPHDC.TO.ESBDC	DC.RTNE.IN	Deal Consolidation Platform
+EPHEB.TO.ESBEB	EZBZ.RTNE.IN	Velocity EZBZ
+EPHEGL.TO.ESBEGL	EGL.RTNE.IN	Enterprise GL
+EPHFM.TO.ESBFM	FM.RTNE.IN	FM Coverage
+EPHFN.TO.ESBFN	
+Finacle Core
+EPHFT.TO.ESBFT	FT.RTNE.IN	Finacle Tresury Channel
+EPHGEM.TO.ESBGEM	GEM.RTNE.IN	Gem Application
+EPHNRD.TO.ESBNRD	NRD.RTNE.IN	Remit Direct
+EPHEA.TO.ESBEA	ESCROW.RTNE.IN	Escrow application
+
+
+
+
+
+
+
+
+
+
+
+
+https://arcospam.axisb.com
+
+https://bitbucket.axisb.com/
+
+https://artifactory.axisb.com/
+
+https://confluence.axisb.com/
+
+https://vms.axisb.com:8443/
+
+https://10.9.56.59/otrs/index.pl
+
+http://10.22.248.49:8085/jenkins/job/esb-nonprod-admin/job/CDPipeline/build?delay=0sec
+
+https://teams.microsoft.com/
+
+https://unidesk.axisb.com
+
+http://10.9.70.26:5601/app/dashboards#/view/b943ec70-23b2-11ec-bf5e-f3cc7ab9814b?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))
+
+https://exchange.axisbank.com/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fexchange.axisbank.com%2fowa%2f
+axisb.com/genesbsupp
+Bank@2022
+
+https://esbelkuat.axisb.com:5601
+user :esbsupport 
+password:  EsbSupport@UAT2022
+
+
+
+
+
+
+
+
+openssl pkcs12 -in /iib/PFXdlmsuat.pfx -nokeys -clcerts -out /iib/PFXdlmsuat.cer  ---------------------------------> convert pfx to .cer  later extract the certificate x.509 encoded..
+echo |openssl s_client -servername domainname -connect 192.168.115.59:9093 2>/dev/null | openssl x509 -noout -text
+openssl s_client -connect ip:port
+
+
+https://esbuat2.axisb.com/crmnext/updateassetleaddetails/enc/update-asset-leads
+
+
+2022-05-23 21:18
+
+cat stderr | grep -i '2022-05-23 21:18'
+
+sftp logins
+------------
+sftp genesbsp@10.9.80.95
+ Bank@2022
+
+
+10.9.208.60
+
+deployment mail
+-------------------
+From:Esbuat.Support@axisbank.com
+To:ESB SRE-1-35298145 ESB SRE, Genesbdev ESB Dev, 320946 Silambarasan3 M, genesbsp Esb Support
+
+
+
+password reset
+---------------------
+From:Esbuat.Support@axisbank.com
+To:genarcsup genarcsup
+Cc:ESB SRE-1-35298145 ESB SRE
+Subject:reset the password of 10.9.212.145
+
+
+load balancer details
+===================
+
+esbuat2.axisb.com----> 10.9.12.38---->443    domain----> v10
+esbuat.axisb.com---->10.9.212.145---> 443    domain----->v12
+==========================================================================================================================
+v10 application flow
+----------------------
+
+https://esbuat2.axisb.com/URI-----------------> Load Balancer
+
+
+https://10.9.4.150:8443/URI(IHS)       https://10.9.4.233:8443/URI(IHS)
+
+
+https://10.9.4.150:EGIP/URI(App server)                 https://10.9.4.233:EGIP/URI(App  server)
+
+
+========================================================================================================================================
+
+openssl pkcs12 -in /iib/PFXdlmsuat.pfx -nokeys -clcerts -out /iib/PFXdlmsuat.cer  ---------------------------------> convert pfx to .cer  later extract the certificate x.509 encoded..
+
+
+echo |openssl s_client -servername domainname -connect 10.9.198.83.59:8443 2>/dev/null | openssl x509 -noout -text--> TO see certificate details
+
+openssl s_client -connect ip:port--> connecticity 
+
+keytool -export -alias aum_ws_new -keystore /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks -rfc -file /tmp/aum.cer---> export certificate with alias name
+
+openssl x509 -in blazeprod.axisbank.com.cer -text -noout---> to view certificate which is .cer
+
+keytool -import -trustcacerts -alias  esbuat2Cert  -file /iib/Cert/esbuat2.axisb.comnew.cer  -keystore /iib/Cert/Blaze2_Interface_JVM.jks  -storetype jks -storepass Axis#1234 --prompt
+
+keytool -import -trustcacerts -alias bankopen_22042022 -file /iib/Cert/uat-axis.cer -keystore /ESB/BROKERTRUSTSTORE/UATBROKERTRUST.jks -storetype jks -storepass Axis#1234
+
+keytool -v -list  -keystore /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks -storetype jks -storepass Axis#1234 | grep -i "CN=aum.axisb.com/emailAddress=aum.support@axisbank.com"
+
+
+
+
+=============================================================================================================================================
+cache reload
+-----------------
+ https://10.9.4.150:8027/JSON/AddTocache?command=add
+ https://10.9.4.150:8106/JSON/AddTocache?command=add
+ 
+ 
+ 
+ https://10.9.4.233:8027/JSON/AddTocache?command=add
+ https://10.9.4.233:8106/JSON/AddTocache?command=add
+
+ihs restart
+===========
+
+cd /ihs/IBM/HTTPServer/bin
+sudo ./apachectl -k stop -f /ihs/IHS8443/httpd.conf
+sudo ./apachectl -k stop -f /ihs/IHS2UAT/httpd.conf
+sudo ./apachectl stop
+
+
+ ==================================================================================================================================================
+ traces:
+ =========
+v12
+--- 
+mqsichangetrace IIBPBRK11 -u -e BRK11.IS.01 -l debug -r -c 100000
+mqsichangetrace IIBPBRK11 -u -e BRK11.IS.01 -l none --trace /home/esbadm/blazePersonalLoan.txt
+ 
+v10
+===
+
+mqsichangetrace IIBABRKT01 -u -e CrmNext_Interface  -l debug -r -c 100000
+mqsichangetrace IIBABRKT01 -u -e CrmNext_Interface -l none
+mqsireadlog IIBABRKT01 -u -e CrmNext_Interface -f -o /tmp/crmnext.xml
+mqsiformatlog -i /tmp/crmnext.xml -o /tmp/crmnext.log
+
+
+===============================
+
+location /elasticsearch {
+proxy_set_header Authorization "Basic ZXNiZXZlbnRzOmVzYmV2ZW50c0BVQVQyMDIx";
+proxy_pass https://esbelkuat.axisb.com:9200/;
+proxy_ssl_session_reuse off;
+}
+
+===============================================
+
+Global chache:
+======================
+
+to check
+======
+mqsireportproperties 'IIBUBRK01' -b cachemanager -o CacheManager -r
+
+
+to enable  and disable:
+===============
+
+stop broker and eable command
+
+mqsichangebroker 'IIBUBRK04' -b default                        ---------> for enabe
+
+mqsichangebroker 'IIBUBRK04' -b  disabled                   -------------> for disable
+
+
+ssl error
+======
+/iib/IIBWORK/mqsi/components/IIBABRKT01
+
+mqsireportproperties  IIBUBRK04 -c AllTypes -o AllReportableEntityNames -r
+mqsichangeporperties BROKERNAME -c TCPClient -o SyncIII -n propertyname -v value.
+====================================================================================================================
+
+For Audit logging 
+
+SELECT * FROM ESBUTIL.APPLICATION_LOG_IIBABRKT01 WHERE REQUEST_UUID='12345'
+SELECT * FROM ESBUTIL.PAYLOAD_LOG_IIBABRKT01 WHERE UUID='1f6091c6-c77c-11ec-92d4-0a0904e90000';
+
+For FIXML and transaction logs 
+
+select * from ESBUTIL.INWARD_TRN where SRC_KEY1='IFT20220507A01' order by CREATED_ON desc ;
+select * from ESBUTIL.TRANSACTION_PAYLOAD where INW_TRN_ID='545140185';
+
+
+
+INWARD_FILTER_MASTER ===>Whitelisting
+TRANSACTION_LOG ====> Audit
+INWARD_TRAN ======>Transactions and Fi modifications
+TRANSACTION_PAYLOAD ======> transaction payloads
+
+======================================================================================================How to get the audit logging details from ESB Audit DB
+-----------------------
+Log into ESB audit databse using SQL Developer using credentials which has read access.
+Execute below query in SQL developer
+Below query will give you all the audit logging details for Channel and Request UUIDThis table stores the audit logs for today's day.
+This table also capture EXCEPTION generated while flow execution in EXCEPTION_TREE column
+====>Fetch Audit log
+SELECT * FROM APPLICATION_LOG_IIBPBRK13 where CHANNEL='ESB' AND REQUEST_UUID='123457';
+###################################====>How to get the audit logging details prior to today's day from ESB Audit DB
+Log into ESB audit databse using SQL Developer using credentials which has read access.
+Execute below query in SQL developer
+Below query will give you all the audit logging details for Channel and Request UUIDThis table stores all the audit logs for prior to day's day.
+This table also capture EXCEPTION generated while flow execution in EXCEPTION_TREE column.
+=====>Fetch History Audit log
+SELECT * FROM HIST_APP_LOG_IIBPBR04 WHERE TRUNC(ORIGIN_TIMESTAMP) = TRUNC(SYSDATE-1) AND CHANNEL='API' AND REQUEST_UUID='suhas2022020912';
+################################################How to get the payload details from ESB Audit DB
+Log into ESB audit databse using SQL Developer using credentials which has read access.
+Execute below query in SQL developer
+Below query will give you all the payload details for uuid.Fetch Payload log
+select * from PAYLOAD_LOG_IIBPBRK12 where uuid='e6281612-7551-11ec-ac6d-0a0915240000';
+#############################################################################How to get the transaction details from ESB Kibana portalLog in kibana
+Go to discover to get the backend details, ESB and backend HTTPStatusCode, ESB and backend response time etc.
+
+
+
+
+https://192.168.94.206:443/aum-web/dao-services.php
+
+
+
+Audit logging application  migration completed from existing AIX servers to new Linux servers .
+
+Currently 2 Linux servers are live on BCC and one server  on IDC data center .
+
+BCC Server IP's : 10.0.186.185 /186 
+IDC Server IP's : 10.9.191.125 ( 10.9.191.143- standby )
+
+Bar override
+=========================
+
+mqsiapplybaroverride -b V1.3_AIX_PROD_CRMNextCaseESBService_CHK_v10_IP_ajay.bar -k CRMNextCaseESBService_v1 -m "gen.JSON_CRMCaseESBServices#SOAP Request.webServiceURL=http://ecrmlapi.axisb.com/CRMnextWebApi/CRMnextService.svc"
+
+==========================================
+MQ commands
+==============
+
+
+DISPLAY QSTATUS(amartest) type(queue) all                 to check last put and get time
+DISPLAY QMSTATUS all                                                 to check qmgr start time
+
+DISPLAY qstatus(EAI.MSGLOG.FAILURE.OUT) type(queue) all
+
+
+endmqm -x 
+strmqm -x
+
+
+echo "clear ql(EAI.MSGLOG.FAILURE.OUT)"|runmqsc QMPBRK
+echo "clear ql(ERROR.API.LOG)"|runmqsc QMPBRK
+echo "clear ql(LOG.FATAL.IN)"|runmqsc QMPBRK
+echo "clear ql(ES.LOG.FATAL.IN)"|runmqsc QMPBRK
+echo "clear ql(EAI.PAYLOAD.LOG.IN)"|runmqsc QMPBRK
+
+display QSTATUS(SCFM.OUTGOING)  type(queue) all
+display QSTATUS(ES.LOG.FATAL.IN)  type(queue) all
+
+BCC DB password :  India#2021
+Audit DB password: India#072022
+
+mqsisetdbparms ACEPBRKAUDIT -n ESBDB -u esbutil -p India#2022 
+
+mqsideploy IIBPBRK02 -e BRK02.IS.09 -a /BAR/IIBPBRK02/ESBFIRetCustInq/ESBFIRetCustInq_PROD_V1.4_DSNCHANGE_Insta10_0204_CEI_ACE12_CEIChange.bar -v /BAR/IIBPBRK02/ESBFIRetCustInq/ESBFIRetCustInq_PROD_V1.4_DSNCHAN
+
+ mqsilist IIBPBRK02 -e BRK02.IS.09 -d2 | grep -i  ESBFIRetCustInq
+ 
+ /api/v1/customer/hunter
+ 
+ 
+ =======================================================================================================================================
+ 
+ TO CHECK THE PERMISSION OF QUEUES:
+----------------------------------
+dspmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm
+
+TO SET  THE PERMISSIONS OF QUEUES:
+---------------------------------
+setmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm +allmqi (for all)
+setmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm +get (for single give name )
+
+
+
+TO REMOVE PERMISSIONS OF QUEUES:
+--------------------------------
+setmqaut -m  QMUATBRK -t q -n EAI.MSGLOG.MGT.IN -p esbadm -allmqi
+
+
+
+=======================================================================================
+DISPLAY CHANNEL(*) TYPE(SVRCONN) where(MAXMSGL GT 4194304)
+
+
+TO CHECK PERMISSION FOR QMANAGER:
+---------------------------------
+dspmqaut -m QMUATBRK -t qmgr -p esbadm
+
+TO SET PERMISSIONS FOR QMANAGER:
+--------------------------------
+setmqaut -m QMUATBRK -t qmgr -p esbadm +connect
+
+TO REMOVE PERMISSIONS FOR QMANAGER:
+-----------------------------------
+setmqaut -m QMUATBRK -t qmgr -p esbadm -connect
+
+
+
+=========================================================================================
+Backout Queue:
+===================
+When the application try to get messages and gives some poison messages it unable to to read the messages.
+So, it will try based on the value given on the backout threshold.
+Once it is reach that messages then it will reach to backout queue. or When the application is try to get messages is any message format incorrect or data changed or mismatch of format then it will reach to backout queue. How to check Backout Queue
+---------------------------
+dis qs(queuename) ---------------------------- How to create Backout Queue
+----------------------------
+define ql(queue.backout)
+alter ql(queuename) BOQNAME(queue.backout)
+
+
+==================================================
+
+Command server:
+================
+The command server is very important for GUI mode for using MQ Explorer. The command server is should be running state then only it works to use explorer and shows all options on GUI.
+Once creating any objects by using explorer first command server takes then it will load data.Once command server started all monitoring queues will connect. To check check command server
+-----------------------------
+dis qmstatus all -----------------------------
+To start & stop command server
+------------------------------
+strmqcsv qmgrname
+endmqcsv qmgrname
+
+
+============================================================
+
+HOW TO DEFINE DEADQ:
+---------------------
+         2.WAYS TO CREATE DEADQ
+
+
+
+1.While creating qmgr-------------  crtmqm -u deadqname qmanagername    
+runmqsc qmanagername--------------  define ql(queuename)
+
+
+
+
+2.create qmgr fisrt then we can assign deadqueue
+crtmqm qmgr
+define ql(qm1.deadq1)
+alter qmgr deadq(qm1.deadq1)
+
+========================================================================
+confluence API details
+======================
+
+https://confluence.axisb.com/display/ESB/APINMAE
+
+
+
+A)   First we should deploy V1.0 bar file in IP _ 10.9.3.233
+
+B) By using mqsireportproperties we get below details. 
+
+        {mqsireportproperties IIBUBRK14 -e BRK14.IS.12 -o HTTPSConnector -r}
+
+
+
+     1) Application name
+
+     2) port
+
+     3) url
+
+
+
+
+
+
+
+C) Then we go to IP- 10.9.212.145  for Nginx entries
+
+D) Go to path __cd /web/Nginx/conf/customconf/https_upstream  
+
+
+
+
+
+E) Take a backup of ( IIBUBRK14-nginx-upstream-https.conf ) file
+
+
+
+
+
+F) Then we give Nginx entries for  IIBUBRK14-nginx-upstream-https.conf  by using below commands
+
+   
+
+
+
+G) we should give Nginx entries as our required details  ( port, url, API )
+
+
+https://esbnewprod.axisb.com/api/v1/customer/8090876544/addressesInfo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.9.10.174:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.9.10.174:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.9.10.175:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.9.10.175:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.9.10.177:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.9.10.177:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.9.10.69:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.9.10.69:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.9.10.140:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.9.10.140:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.9.10.114:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.9.10.114:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.9.10.115:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.9.10.115:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.0.111.241:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.0.111.241:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.0.111.242:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.0.111.242:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.0.111.243:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.0.111.243:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.0.111.244:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.0.111.244:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.0.111.245:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.0.111.245:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.0.156.66:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.0.156.66:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.0.156.67:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.0.156.67:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+scp -pr /web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf 10.0.111.246:/web/Nginx/conf/customconf/https_locations/IIBPBRK11-nginx-location-https.conf
+scp -pr /web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf 10.0.111.246:/web/Nginx/conf/customconf/https_upstream/IIBPBRK11-nginx-upstream-https.conf
+
+
+
+
+/iib/scripts/drm_scripts/idc_bcc_move_stop_brokers.sh
+/iib/scripts/drm_scripts/idc_bcc_move_start_brokers.sh
+
+
+
+
+
+tail -100f /iib/syslog.out | grep -i -E "ora|sync|lock|701|time|mqrc"
+
+tail -100f /iib/syslog.out | grep -i -E "ora|sync|lock|701|time"
+
+
+
+
+
+mqsiapplybaroverride -b V1.7_AIX_PROD_ElasticSearchLoggingApp_V10_01.bar -k ElasticSearchLoggingApp -m "gen.ESLogging#additionalInstances=20" -o /app/BAR/V1.7_AIX_PROD_ElasticSearchLoggingApp_V10_01_Insta.bar
+
+
+
+
+mqsireportproperties IIBPBRK13 -e BRK13.IS.09 -o ComIbmJVMManager -r
+mqsichangeproperties IIBPBRK13 -e BRK13.IS.09 -o ComIbmJVMManager -n jvmSystemProperty -v "-Dcom.ibm.crypto.provider.DoRSATypeChecking=false"
+
+
+
+
+
+cd /web/Nginx/bin/
+
+./StopNginx_7443.sh
+./StopNginx_8443.sh
+./StopNginx_9443.sh
+
+cd /web/Nginx/bin/
+./StartNginx_7443.sh
+cd /web/Nginx/bin/
+./StartNginx_8443.sh
+cd /web/Nginx/bin/
+./StartNginx_9443.sh
+
+ps -ef | grep -i Nginx
+
+cd /iib
+tail -f syslog.out
+
+mqsistop IIBPBRK01 &
+mqsistop IIBPBRK02 &
+mqsistop IIBPBRK03 &
+mqsistop IIBPBRK04 &
+mqsistop IIBPBRK05 &
+mqsistop IIBPBRK11 &
+mqsistop IIBPBRK12 &
+mqsistop IIBPBRK13 &
+mqsistop IIBPBRK14
+
+
+mqsistart IIBPBRK01; sleep 120;
+mqsistart IIBPBRK02; sleep 120;
+mqsistart IIBPBRK03; sleep 120;
+mqsistart IIBPBRK04; sleep 120;
+mqsistart IIBPBRK05; sleep 120;
+mqsistart IIBPBRK11; sleep 120;
+mqsistart IIBPBRK12; sleep 120;
+mqsistart IIBPBRK13; sleep 120;
+mqsistart IIBPBRK14; sleep 120
+
+Queuues Clear:
+
+runmqsc QMPBRK
+
+clear qlocal (EAI.MSGLOG.FAILURE.OUT)
+clear qlocal (ERROR.API.LOG)
+clear qlocal (LOG.FATAL.IN)
+clear qlocal (ES.LOG.FATAL.IN)
+clear qlocal (EAI.PAYLOAD.LOG.IN)
+
+ps -ef | grep -i IIBPBRK
+
+after logs checking, 
+
+ps -ef | grep -i BRK01.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK02.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK03.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK04.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK05.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK11.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK12.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK13.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK14.IS | grep -v grep | wc -l
+
+
+echo "clear ql(ES.LOG.FATAL.IN)"|runmqsc ACEPQMAUDIT
+echo "clear ql(LOG.FATAL.IN)"|runmqsc ACEPQMAUDIT
+
+
+
+
+
+
+mqsichangetrace IIBABRKT01 -u -e FinIFSC_Interface -k IFTESBService_v2 -f C24_Services.C24_Services_MF -l debug -r -c 100000
+
+mqsichangetrace IIBABRKT01 -u -e FinIFSC_Interface -k IFTESBService_v2 -f C24_Services.C24_Services_MF -l none
+
+
+
+mqsireadlog IIBABRKT01 -u -e FinIFSC_Interface -f -o /iib/IFTESBService_v2_ESB.xml
+
+
+mqsiformatlog -i /iib/IFTESBService_v2_ESB.xml -o /iib/IFTESBService_v2_ESB.txt
+
+============================================================================================
+cd /iib/Cert 
+import the certificate from sftp
+
+then check the jks path as below,
+
+scr -pr /iib/Cert/PaSubIssuing.cer
+
+mqsireportproperties IIBPBRK13 -o BrokerRegistry -r
+
+/ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks
+
+cp /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks_ajay_bkp_17112022
+   /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks
+ready with jks path and .cer path
+
+SubIssuing.cer
+
+
+
+keytool -list -trustcacerts -alias Skybox_Root03082022 -file /iib/Cert/Skybox_Root.cer -keystore /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks -storepass Axis#1234
+keytool -import -trustcacerts -alias SkyboxAPI03082022 -file /iib/Cert/SkyboxAPI_Certificate.cer -keystore /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks -storepass Axis#1234 -noprompt
+keytool -list -trustcacerts -alias SkyboxAPI03082022 -file /iib/Cert/SkyboxAPI_Certificate.cer -keystore /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks -storepass Axis#1234
+keytool -import -trustcacerts -alias SKYBOXsub03082022 -file /iib/Cert/SubIssuing.cer -keystore /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks -storepass Axis#1234 -noprompt
+keytool -list -trustcacerts -alias SKYBOXsub03082022 -file /iib/Cert/SubIssuing.cer -keystore /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks -storepass Axis#1234
+Cert addition in Prod: 
+Cert add to 35 server:
+then copy to all servers:
+
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.9.21.21:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.9.21.22:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.9.21.23:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.9.21.24:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.9.21.36:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.9.80.71:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.9.80.72:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.0.126.16:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.0.126.17:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.0.126.18:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.0.126.19:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.0.149.241:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.0.149.242:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.0.66.215:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+scp -pr /iib/Cert/PGP/axis_gpay_cc_prod-private.key 10.0.66.214:/iib/Cert/PGP/axis_gpay_cc_prod-private.key
+   
+
+
+
+keytool -list -keystore /ESB1/BROKERTRUSTSTORE/BROKERTRUSTSTORE.jks -storepass Axis#1234
+
+
+
+select * from APPLICATION_LOG_IIBPBRK11 where INTERFACE_NAME like '%LasecDrawingPowerDetailsAPI%' order by 1 desc;
+
+
+select * from ESBUTIL.APPLICATION_LOG_IIBPBRK13 where REQUEST_UUID = '875834e3-c9d6-4f17-a27a-2e752a077f5';
+
+select * from ESBUTIL.PAYLOAD_IIBPBRK13 where REQUEST_UUID = '875834e3-c9d6-4f17-a27a-2e752a077f5';
+
+
+
+select * from ESBUTIL.INWARD_TRN where SRC_KEY1 ='27a45fce-99e5-46dc-9441-7f34b21b8406';
+
+select count(*) from ESBUTIL.FILE_TRN where trunc(created_on)=trunc(sysdate) and status is null;
+
+select * from ESBUTIL.FILE_TRN where trunc(created_on)=trunc(sysdate) and status is null;
+
+select * from ESBUTIL.LOOKUP ;
+
+
+FIXML:
+
+select * from ESBUTIL.INWARD_TRN where SRC_KEY1= '38608';
+
+select * from ESBUTIL.TRANSACTION_PAYLOAD where INW_TRN_ID = '38608';
+
+
+
+
+
+SELECT COUNT (1) FROM ESBUTIL.TRANSACTION_LOG WHERE  TRUNC(CREATED_ON)=TRUNC(SYSDATE);
+select count (1)  from ESBUTIL.TRANSACTION_LOG ;
+---Queue Based 
+Select sender_id "Cha-nnelId", src_key3 "refNo2",created_on "createdOn", sysdate-created_on "PendingInterval" 
+from esbutil.inward_trn where STATUS_LKP_ID in (7) and trunc(btrn_date) = trunc(sysdate) and sysdate-created_on > interval '30' minute
+and (src_key2 in ('R41', 'R42') ) and sender_id <> 'FINTREASURY';
+
+---PayThru
+select sender_id "ChannelId", src_key1 "refNo1", created_on "createdOn", sysdate-created_on "PendingInterval" 
+from  esbutil.inward_trn where src_key3='STPA109F' and STATUS_LKP_ID in (7) and trunc(btrn_date) = trunc(sysdate);
+
+select * from  esbutil.inward_trn where src_key1='000002638' and trunc(btrn_date) = trunc(sysdate) and sender_id = 'SAK';
+
+NEFT
+----WEB
+Select sender_id "ChannelId", src_key1 "refNo1", created_on "createdOn", sysdate-created_on "PendingInterval" 
+from esbutil.inward_trn where STATUS_LKP_ID in (7) and trunc(btrn_date) = trunc(sysdate) and sysdate-created_on > interval '30' minute
+and  CBS_REF_VALUE2 ='NEFT';
+
+---Queue based
+Select sender_id "ChannelId", src_key3 "refNo2",created_on "createdOn", sysdate-created_on "PendingInterval" 
+from esbutil.inward_trn where STATUS_LKP_ID in (7) and trunc(btrn_date) = trunc(sysdate) and sysdate-created_on > interval '30' minute
+and src_key2 ='N06' ;
+
+---PayThru],  
+select sender_id "ChannelId", src_key1 "refNo1", created_on "createdOn", sysdate-created_on "PendingInterval" 
+from  esbutil.inward_trn where src_key3='STPA109E' and STATUS_LKP_ID in (7) and trunc(btrn_date) = trunc(sysdate);
+
+select * from esbutil.lookup;
+select count(*), status_lkp_id from esbutil.inward_trn where sender_id='FINACLE' and trunc(created_on)=trunc(sysdate) group by status_lkp_id; 
+select count(*), status_lkp_id from esbutil.inward_trn where sender_id='FINNEFT' and trunc(created_on)=trunc(sysdate) group by status_lkp_id;
+select count(*), status_lkp_id from esbutil.inward_trn where sender_id='ARD' and trunc(created_on)=trunc(sysdate) group by status_lkp_id;
+select count(*), status_lkp_id from esbutil.inward_trn where sender_id='ARC' and trunc(created_on)=trunc(sysdate) group by status_lkp_id;
+select count(*), status_lkp_id from esbutil.inward_trn where sender_id='NRD' and trunc(created_on)=trunc(sysdate) group by status_lkp_id;
+select count(*), status_lkp_id from esbutil.inward_trn where sender_id='FINTREASURY' and trunc(created_on)=trunc(sysdate) group by status_lkp_id;
+select * from ESBUTIL.lookup;
+
+
+select * from esbutil.inward_trn where sender_id='FINACLE' and trunc(created_on)=trunc(sysdate) order by updated_on desc;
+select * from esbutil.inward_trn where sender_id='FINNEFT' and trunc(created_on)=trunc(sysdate) order by updated_on desc;
+select * from esbutil.inward_trn where sender_id='ARD' and trunc(created_on)=trunc(sysdate) order by updated_on desc; --status_lkp_id='7';
+select * from esbutil.inward_trn where sender_id='ARC' and trunc(created_on)=trunc(sysdate) order by updated_on desc;
+SELECT * FROM ESBUTIL.INWARD_TRN WHERE SENDER_ID='NRD' AND TRUNC(CREATED_ON)=TRUNC(SYSDATE) ORDER BY UPDATED_ON DESC;
+SELECT * FROM ESBUTIL.INWARD_TRN  WHERE SRC_KEY1='131418045';
+SELECT * FROM ESBUTIL.TRANSACTION_PAYLOAD WHERE INW_TRN_ID='1578689462';
+select * from ESBUTIL.INWARD_TRN where SENDER_REF='AE.C24.SOAP';
+---MAPS
+select * from ESBUTIL.file_record where updated_on like '26-MAR-22%' and sender_id ='MAPS' order by updated_on desc ;
+
+select * from ESBUTIL.file_record where updated_on like '25-MAR-22%' order by CREATED_ON desc;
+
+SELECT * FROM ESBUTIL.FILE_RECORD WHERE UPDATED_ON LIKE '25-MAR-22%' AND FILE_STATUS='FILE_IN_PROCESS';
+
+select count(*), response_code,status  from ESBUTIL.file_trn where fileid in ('26032022000000024378') 
+GROUP BY  RESPONSE_CODE,STATUS;
+
+SELECT * FROM ESBUTIL.FILE_TRN WHERE FILEID ='26032022000000024378' AND RESPONSE_CODE IS NULL;
+SELECT SEQ_STAN_ID,AMOUNT,ACCOUNT_NUMBER,CREATED_ON FROM ESBUTIL.FILE_TRN WHERE FILEID ='0000000000UP24032261' AND RESPONSE_CODE IS NULL;
+select * from ESBUTIL.TRANSACTION_PAYLOAD where INW_TRN_ID='897846965';
+
+
+SELECT * FROM ESBUTIL.FILE_TRN WHERE FILEID ='ATMC220314155339_GDN' AND RESPONSE_CODE IS NULL;
+select SEQ_STAN_ID,AMOUNT,ACCOUNT_NUMBER,CREATED_ON FROM ESBUTIL.FILE_TRN WHERE FILEID ='ATMC220314155339_GDN' AND RESPONSE_CODE IS NULL;
+
+select * from ESBUTIL.TRANSACTION_PAYLOAD where INW_TRN_ID='891647633';
+select * from ESBUTIL.file_trn where fileid ='0000000000UP24032261' order by seq_stan_id;
+
+select count(*) from ESBUTIL.file_trn where fileid ='15122016000000000003' and neft_or_rtgs ='N';
+select count(*) from ESBUTIL.file_trn where fileid ='15122016000000000003' and neft_or_rtgs ='N' and response_code is null;
+
+---End of the day query to check 
+SELECT * FROM ESBUTIL.FILE_TRN WHERE FILEID ='15122016000000000003' AND RESPONSE_CODE IS NULL;
+select * from esbutil.file_trn where SENDER_ID='ERSN' and  trunc(created_on) = trunc(sysdate) and status is null;
+
+
+select count(*) from esbutil.file_trn where trunc(created_on) = trunc(sysdate) and status_lkp_id ='4';
+
+
+--Database Archiving
+SELECT * FROM ESBUTIL.LOG_ESBDB_ARCHIVING WHERE --condition_no =  5 order by start_date desc;
+TRUNC(START_DATE) = TRUNC(SYSDATE) ORDER BY END_DATE DESC;
+select * from ESBUTIL.INWARD_TRN where SRC_KEY1='00000019607318';
+---
+select src_key1,STATUS_LKP_ID,LAST_ERR_TXT from esbutil.hist_inward_trn where src_key1 in 'P9AJDT1JK' group by src_key1,STATUS_LKP_ID,LAST_ERR_TXT;
+
+select src_key1,STATUS_LKP_ID,LAST_ERR_TXT,CREATED_ON from esbutil.hist_inward_trn where src_key1 in 
+
+ group by src_key1,STATUS_LKP_ID,LAST_ERR_TXT,CREATED_ON;
+
+----TD Account ADD
+  select * from ESBUTIL.transaction_log   where  interface_name ='FIMaintenanceService_TDAcctAddReq' and BTID ='ASAP_809898853';
+ select * from ESBUTIL.hist_transaction_log   where  interface_name ='FIMaintenanceService_TDAcctAddReq' and BTID ='ASAP_907901287';
+ 
+ select * from ESBUTIL.inward_trn where src_key1 ='3182530';
+ select * from ESBUTIL.transaction_payload where inw_trn_id='1558997471';
+
+ select * from ESBUTIL.hist_transaction_log WHERE created_on BETWEEN '24-DEC-19 02.00.00.942050000 AM' AND '24-DEC-19 02.15.59.942050000 AM' AND interface_name like '%c24%' ORDER BY created_on DESC;
+
+ select * from ESBUTIL.TRANSACTION_LOG where BTID like '%REQ206459453%'  and created_on BETWEEN '09-JUL-20 PM' AND '09-JUN-20  PM';
+ 
+ SELECT * FROM ESBUTIL.INWARD_FILTER_MASTER WHERE SENDERID='TABSME';  ----SERVICEID='AE.TAB.ESHOP.SSTP.001';
+ SELECT * FROM ESBUTIL.INWARD_FILTER_MASTER WHERE INWARD_IP='10.0.74.96';
+ select * from ESBUTIL.OTP_MANAGER where FUNCTIONID='20084' and REFID like '%ARGO%';
+ 
+ 
+ SELECT * FROM ESBUTIL.INWARD_FILTER_MASTER WHERE SERVICEID='AE.DIBG.CMS.SDBSP.001' AND SYSSERVICEID ='AE.FIN.SSTP' AND INWARD_IP='10.9.188.253';
+ 
+ select * from ESBUTIL.INWARD_FILTER_MASTER where SERVICEID='AE.RPAV.FIN.SSTP.001' and SYSSERVICEID ='AE.FIN.SSTP' and INWARD_IP in ('10.9.188.252',
+'10.9.188.253',
+'10.9.188.254',
+'10.9.188.204',
+'10.9.188.191');
+
+select distinct INWARD_IP from ESBUTIL.INWARD_FILTER_MASTER where SYSSERVICEID = 'AE.FIN.SSTP' AND SENDERID = 'API' AND CREATED_ON LIKE '16-06-22%' ;
+
+
+
+
+
+
+
+mqsicvp IIBPBRK01 | grep -i prob
+mqsicvp IIBPBRK02 | grep -i prob
+mqsicvp IIBPBRK03 | grep -i prob
+
+mqsicvp IIBPBRK04 | grep -i prob
+mqsicvp IIBPBRK05 | grep -i prob
+mqsicvp IIBPBRK11 | grep -i prob
+mqsicvp IIBPBRK13 | grep -i prob
+mqsicvp IIBPBRK12 | grep -i prob
+mqsicvp IIBPBRK14 | grep -i prob
+
+
+
+mqsilist IIBPBRK01 -e BRK01.IS.01
+mqsilist IIBPBRK01 -e BRK01.IS.02
+mqsilist IIBPBRK01 -e BRK01.IS.01 -k C24_Sync_Inq_Interfaces -d2
+mqsireadbar -b /MQ1/BAR/Inq_Interface/AIX_PROD_C24_Sync_Inq_Interfaces_V1.1_Insta150_v10.bar -r
+history
+mqsireportproperties IIBPBRK01 -e BRK01.IS.01 -o HTTPSConnector -r
+mqsireportproperties IIBPBRK01 -c TCPIPClient -o AllReportableEntityNames -r
+set -o vi
+cd /iib
+tail -f syslog.out
+mqsireportperties IIBPBRK01 -c AllTypes -o AllReportableEntityNames -r
+mqsireportproperties  IIBPBRK01 -c AllTypes -o AllReportableEntityNames -r
+mqsichangeproperties IIBPBRK01 -c TCPIPClient -o ASyncNewII -n MaximumConnections -v 250
+ mqsireportproperties  IIBPBRK01 -c AllTypes -o AllReportableEntityNames -r | grep -i sync
+exit
+ps -ef | grep 31129902
+mqsilist IIBPBRK01 -e BRK01.IS.09
+mqsistopmsgflow IIBPBRK01 -e BRK01.IS.09
+tail -f syslog.out  | grep IIBPBRK01
+mqsistartmsgflow IIBPBRK01 -e BRK01.IS.09
+mqsireportproperties IIBPBRK01 -c TCPIPClient -o AllReportableEntityNames -r
+
+
+mqsichangeproperties IIBPBRK01 -c TCPIPClient -o ASyncNewII -n MaximumConnections -v 250
+cd /iib
+tail -f sys
+tail -f syslog.out
+mqsistopmsgflow IIBPBRK01 -e BRK01.IS.09
+tail -f syslog.out | grep -i IIBPBRK01.BRK01.IS.09
+mqsistartmsgflow IIBPBRK01 -e BRK01.IS.09
+mqsireportproperties IIBPBRK01 -c TCPIPClient -o AllReportableEntityNames -r | grep -i MaximumConnections
+mqsireportproperties IIBPBRK01 -c TCPIPClient -o AllReportableEntityNames -r | grep -i ASyncNewII
+mqsireportproperties  IIBPBRK01 -c AllTypes -o AllReportableEntityNames -r
+
+
+4.150,4.233
+
+mqsistop IIBUBRK01 ; sleep 10
+mqsistop IIBUBRK02 ; sleep 10
+mqsistop IIBUBRK03 ; sleep 10
+mqsistop IIBUBRK04 ; sleep 10
+mqsistop IIBUBRK05 ; sleep 10
+mqsistop IIBUBRK11 ; sleep 10
+mqsistop IIBUBRK12 ; sleep 10
+mqsistop IIBUBRK13 ; sleep 10
+mqsistop IIBUBRK14 ; sleep 10
+ 
+ 
+
+
+ps -ef | grep IBUBRK
+
+ 
+
+
+mqsistart IIBUBRK01 ; sleep 30
+mqsistart IIBUBRK02 ; sleep 30
+mqsistart IIBUBRK03 ; sleep 30
+mqsistart IIBUBRK04 ; sleep 60
+mqsistart IIBUBRK05 ; sleep 30
+mqsistart IIBUBRK11 ; sleep 60
+mqsistart IIBUBRK12 ; sleep 30
+mqsistart IIBUBRK13 ; sleep 30
+mqsistart IIBUBRK14 ; sleep 30
+ 
+
+
+
+
+-----------------------------
+
+
+mqsistart IIBUBRK01 ; sleep 30
+mqsistart IIBUBRK02 ; sleep 30
+mqsistart IIBUBRK03 ; sleep 30
+mqsistart IIBUBRK04 ; sleep 100
+mqsistart IIBUBRK05 ; sleep 30
+mqsistart IIBUBRK11 ; sleep 100
+mqsistart IIBUBRK12 ; sleep 100
+mqsistart IIBUBRK13 ; sleep 100
+mqsistart IIBUBRK14 ; sleep 100
+ 
+
+=====================================
+
+ps -ef | grep -i BRK01.IS | grep -v grep | wc -l  
+ps -ef | grep -i BRK02.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK03.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK04.IS | grep -v grep | wc -l  
+ps -ef | grep -i BRK05.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK11.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK12.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK13.IS | grep -v grep | wc -l
+ps -ef | grep -i BRK14.IS | grep -v grep | wc -l
+ 
+
+BRK01-13
+BRK02-16
+BRK03-13
+BRK04-16
+BRK05-13
+BRK11-22
+BRK12-21
+BRK13-21
+BRK14-17 
+ 
+
+
+
+
+Thank & Best Regards,
+ESB UAT Support.
+
+
+
+kindly check ESB Help Page first for ESB Project Engagement, processes, ticketing/Support, escalation matrix etc
+
+
+
+Kindly raise a unidesk request under Application Management --> Enterprise Service Bus --> {Select relevant issue list}
+
+
+
+please confirm whether ESB certificate imported or not. 
+If not please find below confluence page for ESB domain certificate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-===============================================================================================
+
+ps -ef | grep -i filebeat
+crontab -l
+crontab -e
+bc
+ps -ef | grep -i filebear
+ps -ef | grep -i filebeat
+crontab -l
+/web/filebeat-7.15.0-linux-x86_64/check_filebeat.sh
+cat /web/filebeat-7.15.0-linux-x86_64/check_filebeat.sh
+cd /web/filebeat-7.15.0-linux-x86_64
+./check_filebeat.sh
+ps -ef | grep -i filebat
+ps -ef | grep -i filebeat
+bc
+ls -alrt
+vi filebeat.yml
+kill -9 2854040
+./check_filebeat.sh
+bc
+ps -ef | grep -i filebeat
+kill -9 3247462
+bc
+cat start_filebeat.sh
+cat filebeat.yml
+ps -ef | grep -i filebeat
+ls -alrt
+./check_filebeat.sh
+cd /web/Nginx/conf/customconf/https_locations
+ls -alrt
+ls -alrt IIBUBRK01*
+diff  IIBUBRK01-nginx-location-https.conf IIBUBRK01-nginx-location-https.conf_onprem_elk
+cp IIBUBRK01-nginx-location-https.conf_onprem_elk IIBUBRK01-nginx-location-https.conf
+
