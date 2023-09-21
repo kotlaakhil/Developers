@@ -1,0 +1,27 @@
+server1="username@server1.example.com"
+server2="username@server2.example.com"
+server3="username@server3.example.com"
+
+# Define commands to execute on each server
+command1="ls /path/on/serv"
+command2="df -h"
+command3="uptime"
+
+# Execute commands on server 1
+echo "Executing command on server1..."
+ssh "$server1" "$command1"
+
+# Execute commands on server 2
+echo "Executing command on server2..."
+ssh "$server2" "$command2"
+
+# Execute commands on server 3
+echo "Executing command on server3..."
+ssh "$server3" "$command3"
+
+# Check if the ssh commands were successful
+if [ $? -eq 0 ]; then
+  echo "All commands executed successfully."
+else
+  echo "Error: Some commands failed."
+fi
