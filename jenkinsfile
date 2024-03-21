@@ -1,6 +1,6 @@
 node {
     stage('Gitclone') {
-	    git branch: 'main', credentialsId: 'AWS', url: 'https://github.com/kotlaakhil/ks.git'
+	    git branch: 'main', credentialsId: 'AWS', url: 'https://github.com/kotlaakhil/testapplication.git'
 	     
     }
         stage('Maven version') {
